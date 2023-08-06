@@ -1,0 +1,338 @@
+id,name,productCount,marketId,marketProvider,categoryUrl
+896c1877-2fb7-467a-affb-5299bea9dfd5,✒️ Szkoła ✒️,1,a29a43c6-b9ec-4873-b2c4-2861f09dc1c9,Biedronka,https://home.biedronka.pl/promocje-%E2%9C%92%EF%B8%8F-szkola-%E2%9C%92%EF%B8%8F/
+f6a0d101-93c7-42fd-9338-3962c923a8b9,LATO W KUCHNI - artykuły aż do -25%,3,a29a43c6-b9ec-4873-b2c4-2861f09dc1c9,Biedronka,https://home.biedronka.pl/%F0%9F%94%A5-promocje-%F0%9F%94%A5-lato-w-kuchni---artykuly-az-do--25%25/
+5dcb13df-15cf-4b4d-9ed4-e8d3188b1cf6,Sport i hobby,15,a29a43c6-b9ec-4873-b2c4-2861f09dc1c9,Biedronka,https://home.biedronka.pl/promocje-sport-i-hobby/
+5d3a6339-f8ca-40d4-8345-53c48c813b87,Warsztat i auto,48,a29a43c6-b9ec-4873-b2c4-2861f09dc1c9,Biedronka,https://home.biedronka.pl/%F0%9F%94%A5-promocje-%F0%9F%94%A5-warsztat-i-auto/
+782dce3f-26d3-4ebd-bdbd-c35319c60ae0,Elektronika,80,a29a43c6-b9ec-4873-b2c4-2861f09dc1c9,Biedronka,https://home.biedronka.pl/%F0%9F%94%A5-promocje-%F0%9F%94%A5-elektronika/
+183decf4-6705-4d21-b593-63f987d0a73d,Moda,71,a29a43c6-b9ec-4873-b2c4-2861f09dc1c9,Biedronka,https://home.biedronka.pl/%F0%9F%94%A5-promocje-%F0%9F%94%A5-moda/
+5677a7f4-fa1c-43f7-99bd-dcc299dfe90e,Ogr&oacute;d,107,a29a43c6-b9ec-4873-b2c4-2861f09dc1c9,Biedronka,https://home.biedronka.pl/%F0%9F%94%A5-promocje-%F0%9F%94%A5-ogrod/
+8e41e6d3-bedc-4d2d-8ffa-310562340d34,Dziecko,95,a29a43c6-b9ec-4873-b2c4-2861f09dc1c9,Biedronka,https://home.biedronka.pl/%F0%9F%94%A5-promocje-%F0%9F%94%A5-dziecko/
+97e2571a-b6ff-4838-81ef-1b6f68eb64dc,"Sport, zdrowie i uroda",123,a29a43c6-b9ec-4873-b2c4-2861f09dc1c9,Biedronka,https://home.biedronka.pl/%F0%9F%94%A5-promocje-%F0%9F%94%A5-sport-zdrowie-i-uroda/
+c983cfac-e989-4601-a02e-70ce14183065,Meble i akcesoria ogrodowe - WYPRZEDAŻ,134,a29a43c6-b9ec-4873-b2c4-2861f09dc1c9,Biedronka,https://home.biedronka.pl/%F0%9F%94%A5-promocje-%F0%9F%94%A5-meble-i-akcesoria-ogrodowe---wyprzedaz/
+b23779b5-4925-4ed4-95e8-ce755f1cc499,Dodaj za 1 zł!,161,a29a43c6-b9ec-4873-b2c4-2861f09dc1c9,Biedronka,https://home.biedronka.pl/%F0%9F%94%A5-promocje-%F0%9F%94%A5-dodaj-za-1-zl%21/
+a8660364-bab9-4540-a13a-99acb939096b,Powr&oacute;t bestseller&oacute;w aż do -50%,155,a29a43c6-b9ec-4873-b2c4-2861f09dc1c9,Biedronka,https://home.biedronka.pl/promocje-powrot-bestsellerow-az-do--50%25/
+3c2390e9-0068-45a8-ba45-f45ecbb6c2cc,Kuchnia,142,a29a43c6-b9ec-4873-b2c4-2861f09dc1c9,Biedronka,https://home.biedronka.pl/%F0%9F%94%A5-promocje-%F0%9F%94%A5-kuchnia/
+5d1c3f5a-c521-426e-b4d6-94b2f7188f42,Dom,212,a29a43c6-b9ec-4873-b2c4-2861f09dc1c9,Biedronka,https://home.biedronka.pl/%F0%9F%94%A5-promocje-%F0%9F%94%A5-dom/
+89a29ac0-0368-4f24-8f0b-5812ca5f3a52," Mięso, Drób, Wędliny ",0,d78b8214-19ec-4a98-97c4-0b9cfbf341a0,Kaufland,https://www.kaufland.pl/oferta/aktualny-tydzien/przeglad.category=01_Mięso__Drób__Wędliny.html
+8de1bb37-0a9e-42a3-a012-00cc4d8672ff," Tekstylia, Artykuły samochodowe, Artykuły sezonowe, Zabawki ",0,d78b8214-19ec-4a98-97c4-0b9cfbf341a0,Kaufland,https://www.kaufland.pl/oferta/aktualny-tydzien/przeglad.category=12_Tekstylia__Artykuły_samochodowe__Artykuły_sezonowe__Zabawki.html
+4d004135-d6a5-481c-bad5-ee19ee9694be," Napoje ",0,d78b8214-19ec-4a98-97c4-0b9cfbf341a0,Kaufland,https://www.kaufland.pl/oferta/aktualny-tydzien/przeglad.category=08_Napoje.html
+718320bc-e9c2-4481-aa6d-282f35984f1d," Owoce, Warzywa, Rośliny ",0,d78b8214-19ec-4a98-97c4-0b9cfbf341a0,Kaufland,https://www.kaufland.pl/oferta/aktualny-tydzien/przeglad.category=02_Owoce__Warzywa__Rośliny.html
+2146936e-4d84-4259-afc8-295a55ab411f," Nabiał ",0,d78b8214-19ec-4a98-97c4-0b9cfbf341a0,Kaufland,https://www.kaufland.pl/oferta/aktualny-tydzien/przeglad.category=03_Nabiał.html
+b6a5d5b6-0551-4be8-8b03-b391d32fea90," Świeże ryby ",0,d78b8214-19ec-4a98-97c4-0b9cfbf341a0,Kaufland,https://www.kaufland.pl/oferta/aktualny-tydzien/przeglad.category=01a_Świeże_ryby.html
+1d1bef0e-52f0-4da3-9f3c-cf623c5fed68," Artykuły dla dzieci ",0,d78b8214-19ec-4a98-97c4-0b9cfbf341a0,Kaufland,https://www.kaufland.pl/oferta/aktualny-tydzien/przeglad.category=13_Artykuły_dla_dzieci.html
+073942c4-e483-4916-bf53-581b389232ab," Artykuły elektro, Biuro, Media ",0,d78b8214-19ec-4a98-97c4-0b9cfbf341a0,Kaufland,https://www.kaufland.pl/oferta/aktualny-tydzien/przeglad.category=10_Artykuły_elektro__Biuro__Media.html
+422f4a56-c478-4406-ae58-080b3d277371," Kawa, Herbata, Słodycze, Przekąski ",0,d78b8214-19ec-4a98-97c4-0b9cfbf341a0,Kaufland,https://www.kaufland.pl/oferta/aktualny-tydzien/przeglad.category=07_Kawa__Herbata__Słodycze__Przekąski.html
+6bd0e3d7-b285-4d7a-92ca-c5a9fd39e6a9," Mrożonki ",0,d78b8214-19ec-4a98-97c4-0b9cfbf341a0,Kaufland,https://www.kaufland.pl/oferta/aktualny-tydzien/przeglad.category=04_Mrożonki.html
+5baaf8fe-3762-445d-bb16-ffa63c288c33," Kosmetyki, Chemia ",0,d78b8214-19ec-4a98-97c4-0b9cfbf341a0,Kaufland,https://www.kaufland.pl/oferta/aktualny-tydzien/przeglad.category=09_Kosmetyki__Chemia.html
+8d4124dc-ca6b-4eb5-b77a-e1737b739b2c," ABC każdej kuchni ",0,d78b8214-19ec-4a98-97c4-0b9cfbf341a0,Kaufland,https://www.kaufland.pl/oferta/aktualny-tydzien/przeglad.category=06_ABC_każdej_kuchni.html
+50f5f398-0d16-4744-8e6d-681d643eb46a," Garmażeria, Konserwy ",0,d78b8214-19ec-4a98-97c4-0b9cfbf341a0,Kaufland,https://www.kaufland.pl/oferta/aktualny-tydzien/przeglad.category=05_Garmażeria__Konserwy.html
+23b7d254-689c-49db-8288-e51af016a3ff," Artykuły AGD ",0,d78b8214-19ec-4a98-97c4-0b9cfbf341a0,Kaufland,https://www.kaufland.pl/oferta/aktualny-tydzien/przeglad.category=11_Artykuły_AGD.html
+a32e0324-8d56-4cc2-aed9-4e648e14101d,Kategorie online,0,21962942-db00-4bd2-b5fc-3dda13a61b49,Lidl,https://www.lidl.pl/c/kategorie-online/s10013468
+02c39aa5-e0c9-4249-9bfb-bef4986962bd,Uroda i zdrowie,0,21962942-db00-4bd2-b5fc-3dda13a61b49,Lidl,https://www.lidl.pl/h/uroda-i-zdrowie/h10000999
+e154d832-27c4-4ba6-8d25-2c66cd694cef,Dom,0,21962942-db00-4bd2-b5fc-3dda13a61b49,Lidl,https://www.lidl.pl/h/dom/h10000996
+b0ed9f8e-bc03-42f5-b1fc-c45c59c403b1,Warsztat i auto,0,21962942-db00-4bd2-b5fc-3dda13a61b49,Lidl,https://www.lidl.pl/h/warsztat-i-auto/h10000994
+5c77cf4d-cb13-4c61-b2b6-c966218fec0d,Kuchnia,0,21962942-db00-4bd2-b5fc-3dda13a61b49,Lidl,https://www.lidl.pl/h/kuchnia/h10000997
+c702a79d-b51f-4706-b205-38c44862c515,Dziecko,0,21962942-db00-4bd2-b5fc-3dda13a61b49,Lidl,https://www.lidl.pl/h/dziecko/h10000995
+80cf6508-54d6-45a4-b610-fa183162dec1,Promocje,0,21962942-db00-4bd2-b5fc-3dda13a61b49,Lidl,https://www.lidl.pl/q/query/wyprzedaz
+97be4a6b-4e92-4754-86a0-2cd3ac1ea45c,Moda,0,21962942-db00-4bd2-b5fc-3dda13a61b49,Lidl,https://www.lidl.pl/h/moda/h10000967
+e3e47f89-a282-43e4-b3a4-4db218fc063c,Ogród i balkon,0,21962942-db00-4bd2-b5fc-3dda13a61b49,Lidl,https://www.lidl.pl/h/ogrod-i-balkon/h10001000
+3940940b-8c91-4b88-b7a5-d33df4ab8202,🏄‍♂️ Lato,0,21962942-db00-4bd2-b5fc-3dda13a61b49,Lidl,https://www.lidl.pl/c/lato/s10019783
+430c618d-9f53-4b3f-a610-4b6379be06f0,Sport i wypoczynek,0,21962942-db00-4bd2-b5fc-3dda13a61b49,Lidl,https://www.lidl.pl/h/sport-i-wypoczynek/h10000998
+640c4cea-4350-4fba-a796-cd9744953c79,Stała oferta,0,21962942-db00-4bd2-b5fc-3dda13a61b49,Lidl,https://www.lidl.pl/q/query/stala-oferta
+2c0984fc-a69d-4d2d-93d7-3643b96ad541,Kuchnia azjatycka,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/kuchnia-azjatycka/890
+60f4c84b-1e3b-41fb-baa2-ffff0b5718bf,Gastronomia,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/gastronomia/372
+c4f720a9-daa7-4cd2-af35-86f8bf6b448a,Woda,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/woda/19
+56490544-b911-4a78-92aa-36432b6421cd,Garmażerka,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/garmazerka/382
+1a096380-fb86-4048-a517-f7a64ed20a37,Sałatki,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/salatki/808
+03163c53-b8f4-4e49-8e59-7b8efe0c2691,Dania gotowe,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/dania-gotowe/47
+333bbe75-9e77-4ee9-9361-1955aa47d7ae,Artykuły szkolne,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/artykuly-szkolne/1051
+3aa6578c-b546-46c0-aa9b-bbb1a734ec11,"Sałatki, surówki",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/salatki-surowki/911
+817eccfd-817a-42f8-809c-f5ae62dec7e7,Plecaki,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/plecaki/1052
+43e51558-18d4-473e-8d52-747892743f21,Flamastry,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/flamastry/1155
+094b1a1c-417f-4f11-a156-166d41102c33,Papiernicze,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/papiernicze/5
+625a353a-2c20-4005-9e8a-dfccd0e712d6,Piórniki,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/piorniki/1053
+b370d4a7-f474-48ef-b720-75a759df529e,Ołówki,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/olowki/1150
+58772430-95bd-41fb-867c-1e61a5722fea,Kleje,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/kleje/1151
+6acdb7a3-53c2-453d-a85c-dce616d8fbe3,"Notesy, kalendarze",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/notesy-kalendarze/1148
+91f55239-74bc-4273-b426-5bb14916a907,Pokaż więcej...,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/przybory-szkolne/1055
+4529cd53-d485-457d-a32b-3402d1ce2fd9,Herbaty Owocowe,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/herbaty-owocowe/358
+29538686-2ddc-4a4d-b44d-f27c840b02ee,Kredki,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/kredki/1154
+97b99b1b-2853-48c8-b545-4fa67ea64608,Nożyczki,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/nozyczki/1152
+95babfed-2efa-40b4-b154-f4f1a577b41c,Herbaty Czarne,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/herbaty-czarne/342
+9492f79f-f102-425a-b36e-8115065bed92,Teczki,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/teczki/1149
+2136a78f-d9bb-4c1c-b668-b5e3e84e3886,Herbaty,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/herbaty/16
+5167a058-3300-4989-8c6c-4917164b3bf4,Zeszyty,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/zeszyty/1054
+50020b46-a3ee-4a1e-84bd-8949eaccd63d,Herbaty Aromatyzowane,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/herbaty-aromatyzowane/973
+c9577180-130b-4898-957e-eb9d74fedff7,Kawy i herbaty,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/kawy-i-herbaty/947
+b222f766-a8ca-4504-8ed3-54103da79be9,Herbaty Odchudzające,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/herbaty-odchudzajace/366
+ae796d41-1747-4c5f-a956-a066766b29af,Pokaż więcej...,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/herbaty/16
+84fb2483-be14-4a98-ac22-ae6840715a31,Herbaty Ziołowe,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/herbaty-ziolowe/354
+b2dea179-5718-4459-a37c-a5a8c26e050b,Kawy,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/kawy/55
+210a3e6e-64d4-4664-b0ea-d4c07b178d4f,Napoje kawowe,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/napoje-kawowe/782
+3c4facfb-9677-4427-803e-7903feba636d,Cappuccino,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/cappuccino/339
+19131bb8-f5e6-4a39-999d-032cf63aa278,Kawa Rozpuszczalna,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/kawa-rozpuszczalna/341
+cfd6b14b-4c6c-4b6c-8594-de011f16588f,Bezkofeinowa Kawa,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/bezkofeinowa-kawa/338
+5135e8ec-b2cb-48bc-91ea-615399e94d61,Kawa Mielona,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/kawa-mielona/340
+5c826308-2782-49af-806f-4c9d89180404,Mrożonki,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/mrozonki/20
+c028b9e5-725d-45c6-80cf-4100f1e7c4eb,Mrożonki,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/mrozonki/394
+16eed946-4947-4566-beb6-edb8672c6b85,Zupy mrożone,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/zupy-mrozone/234
+417fbf9d-526b-43ec-9c4e-6d5a783d00ab,"Dania gotowe, frytki, pozostałe",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/dania-gotowe-frytki-pozostale/970
+09315095-62da-4e37-bab3-6569e1cef191,Pokaż więcej...,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/kawy/55
+cff2cd78-f9b0-4b62-9f45-f52bd1cf1f72,Pokaż więcej...,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/dania-gotowe-frytki-pozostale/970
+3bad2423-e2fd-485e-b35d-89ea8c682cea,Lody,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/lody/240
+6811899d-1515-433e-ace9-1026851d0b17,Pizza,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/pizza/239
+ad2b0b1b-79d6-4e1f-bccf-3b650cf89aa2,Mięsa mrożone,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/miesa-mrozone/922
+20184abc-f8cf-430a-96e5-48afb2cc45b5,Pozostałe Dania Gotowe,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/pozostale-dania-gotowe/238
+fa216941-11e8-447b-bc3c-f785f8f83f31,Lody,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/lody/650
+80a1b7b0-ba17-45ff-9e4c-949d1faf4a26,"Lody na patyku, rożki",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/lody-na-patyku-rozki/1050
+698c9209-f226-45dd-97bc-8daf31cc2e1a,"Rolady lodowe, torty",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/rolady-lodowe-torty/649
+49d7b0f7-4944-41e8-84dd-954501ae4a66,Ryby i owoce morza mrożone,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/ryby-i-owoce-morza-mrozone/919
+73747e73-9e29-445d-812b-3dfcc74ed0b7,Frytki,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/frytki/237
+6cf403bb-6441-4ea8-bcd4-8fd6f68c9032,Owoce Mrożone,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/owoce-mrozone/235
+d9ec51c3-6cab-45b8-a8dd-47f03b2eb1b4,Ryby dania mrożone,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/ryby-dania-mrozone/908
+902d6a31-469a-4de5-8fe7-62489f0e7532,Sosy do lodów,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/sosy-do-lodow/949
+06d653a9-d6e5-44d2-9723-cf2461f80014,Artykuły dziecięce,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/artykuly-dzieciece/4
+c77dc5e1-a6ee-44a8-b639-c97f000fb1b9,Gryzaki,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/gryzaki/187
+20d02cda-8272-433d-bac7-0ed5ec2106e0,Akcesoria i zabawki - Artykuły dziecięce,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/akcesoria-i-zabawki-artykuly-dzieciece/182
+281d1e3c-56b0-4378-af8e-bfc546a06e39,Warzywa,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/warzywa/231
+1a65973a-550f-452e-8736-3a0ec2f87c82,Pozostałe - Akcesoria i zabawki - Artykuły dziecięce,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/pozostale-akcesoria-i-zabawki-artykuly-dzieciece/779
+d170890f-795a-4441-b10a-b686b2b3fc3f,Zabawki,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/zabawki/188
+55b0064c-88b9-4f26-a4e0-98d4be3a565b,Warzywa i owoce,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/warzywa-i-owoce/230
+2ae62007-f7d0-4e98-af70-c47ce13bee86,Ryby mrożone,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/ryby-mrozone/946
+26ffc849-80b4-4e84-968c-5394e40f6e25,Smoczki,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/smoczki/185
+0aff926c-115c-4f65-885e-c372e80e02be,"Butelki, kubki",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/butelki-kubki/186
+0e09113b-77b2-4821-80f5-c67709fdb873,Mieszanki warzywne,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/mieszanki-warzywne/232
+159e351c-7067-4630-978e-f567478a8906,Artykuły spożywcze,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/artykuly-spozywcze/166
+606d3e44-33c2-4fe1-b32e-ca48286586c7,"Napoje, soki, nektary",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/napoje-soki-nektary/170
+af13168a-bd79-4ece-9a54-fac98c5efe5d,Woda dla dzieci,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/woda-dla-dzieci/800
+35ee64a7-724e-4619-936c-15c81700e1c3,Mleka,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/mleka/177
+82829855-c1f7-4aaf-b27e-cae68a2cc95a,Desery,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/desery/168
+c5ee7d08-976d-4115-8979-c4344599b7ae,Pokaż więcej...,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/artykuly-spozywcze/166
+861cac28-4c17-45b1-8cb6-f9011487ad13,Pieluszki,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/pieluszki/183
+c172647e-e064-48a5-b45a-c0d31b99295a,Zupki dziecięce,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/zupki-dzieciece/167
+a4030156-fda7-4e9d-87d1-d9868d3c61ee,Kosmetyki dla dzieci,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/kosmetyki-dla-dzieci/184
+d7bffb34-c33e-40eb-8fbf-e66f06ad385e,Chusteczki,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/chusteczki/621
+a02b8a4b-13aa-4573-8ae8-1d59bf46c8cf,Chemia i kosmetyki,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/chemia-i-kosmetyki/7
+a4a6ca54-0323-4957-8e75-78a5691498b7,Higiena i kosmetyka,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/higiena-i-kosmetyka/929
+ad4f3a36-7caa-481b-8d0f-745653636843,Ręczniki papierowe,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/reczniki-papierowe/428
+006168f5-be5a-42aa-91c8-f03a697aec58,Papiery toaletowe,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/papiery-toaletowe/425
+272df497-b820-437e-9bce-26ea71359451,Chusteczki higieniczne,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/chusteczki-higieniczne/429
+22d5f8c7-a235-4142-b73c-d3685cb158a2,Artykuły higieniczne,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/artykuly-higieniczne/13
+3f5240eb-7402-4441-882f-1f14ac594930,Kosmetyki,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/kosmetyki/15
+4027b56d-e057-44b3-803e-e5282ea3d502,Akcesoria kąpielowe,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/akcesoria-kapielowe/468
+10756123-c3c5-463a-a8d4-5ae7b8dbe156,Akcesoria kosmetyczne,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/akcesoria-kosmetyczne/837
+4d27e84c-2497-4971-9cc5-b82b646b6be6,"Środki czyszczące, odświeżacze",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/srodki-czyszczace-odswiezacze/915
+b92423be-56e0-4d03-8ed1-f36b443a8780,Higiena jamy ustnej,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/higiena-jamy-ustnej/464
+9622256c-15cd-45fe-aaa4-ce718cf79db4,Pielęgnacja włosów,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/pielegnacja-wlosow/451
+897c8d2f-ab48-4ba5-abab-61913bd4d62d,Kosmetyki do Pielęgnacji twarzy,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/kosmetyki-do-pielegnacji-twarzy/829
+aff36e5b-74c8-45ee-ab84-d66080d9e143,Artykuły Higieniczne Dla Kobiet,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/artykuly-higieniczne-dla-kobiet/430
+ff409675-f3ec-4450-8a69-74f2ea0d48c6,Odświeżacze,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/odswiezacze/410
+59e0a440-34d3-40d1-bc6b-055fcf80bc82,Środki do czyszczenia,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/srodki-do-czyszczenia/415
+158420a0-8606-49b8-a3f1-e3d69d136091,Środki owadobójcze i akcesoria,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/srodki-owadobojcze-i-akcesoria/957
+b94806f6-d482-4ae3-94a9-2275aa71b536,Akcesoria owadobójcze,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/akcesoria-owadobojcze/935
+5b8174ea-c65f-485d-8172-677e5fe52bed,Środki przeciw owadom,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/srodki-przeciw-owadom/409
+512ad82e-9a66-4db0-a527-eab858a0cd22,Środki piorące,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/srodki-piorace/396
+cb2e5c2a-23a5-4ca3-8aa0-62c44cb451bf,Pokaż więcej...,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/kosmetyki/15
+a51b99ce-8551-45d5-933f-39517e1fbbcc,Odplamiacze,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/odplamiacze/405
+1e44bf68-4d40-42e4-8084-459846a3a59c,Proszki do prania,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/proszki-do-prania/397
+be6e9abc-7895-4d85-a7f9-6bd5c0cfa03b,"Płyny, żele do prania",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/plyny-zele-do-prania/402
+296f20ed-8a55-4479-a879-ede93968bcc0,Płyny do płukania,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/plyny-do-plukania/403
+3d278ff5-147c-448c-a57a-b2b58a3fef4e,Pokaż więcej...,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/srodki-piorace/396
+b0d37ef8-a946-4ac9-8ec8-c3c06607aa6b,Wybielacze,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/wybielacze/406
+e5f6fbd6-82a1-47c4-bb7c-e6f91819797b,Akcesoria ogrodnicze,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/akcesoria-ogrodnicze/1139
+aefc24ce-d7a7-4eac-9fed-74a454410748,Art. przemysłowe,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/artykuly-przemyslowe/1
+b5ed7cba-5c8c-4535-bf24-7399e212ccc4,Artykuły dekoracyjne,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/artykuly-dekoracyjne/37
+6bdb7a57-c1de-46c2-863b-976bab95ca25,Upominki,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/upominki/31
+2015748b-bf44-4475-8115-9d48324ca878,Szkło i ceramika,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/szklo-i-ceramika/551
+b136945d-e0d3-4422-95a4-5840466c4281,Serwetki,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/serwetki/552
+a5fcfbb9-dd01-4851-a6bc-73ce387235e0,Pozostałe,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/pozostale/555
+f2f9ea24-2f12-41db-ad18-fabf96f7e808,Obrusy,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/obrusy/554
+cf807813-075b-4f1d-97d0-e9f945be841f,Pokaż więcej...,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/artykuly-dekoracyjne/37
+6517128b-e76c-484c-952d-032cb2386287,Pozostałe artykuły do sprzątania,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/pozostale-artykuly-do-sprzatania/838
+22042787-57a1-455a-b15b-3cb18769d49c,Czyściki,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/czysciki/504
+2a0e88ea-91e7-4600-97b5-efae23de3f8e,Artykuły Do Sprzątania,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/artykuly-do-sprzatania/502
+2bf0b849-0381-4abb-924e-f51972cbc1ee,Ścierki,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/scierki/503
+5e88f45e-a4c8-4a00-9eaf-070efc92db5b,Wiadra,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/wiadra/506
+dd0036d7-009a-4200-986b-e7144e972544,Produkty z drewna i korku,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/produkty-z-drewna-i-korku/529
+0fa5fe63-edb3-4508-a4da-5dd168a29e54,Artykuły kuchenne,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/artykuly-kuchenne/961
+80e2183c-620c-4ea5-89e2-155fee345851,Worki na śmieci,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/worki-na-smieci/507
+500f9b3f-e86e-433a-bc70-4938f41f26c8,Plastiki,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/plastiki/526
+65cc8ac2-93f5-47e8-9ede-76b86afe63ff,Stal nierdzewna,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/stal-nierdzewna/509
+35d20807-71ed-4988-aa2f-27bbe5b9cb81,Pozostałe - Artykuły Kuchenne,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/pozostale-artykuly-kuchenne/842
+e048cae9-cd4f-4506-9adc-dc58ffa5f49e,Bielizna,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/bielizna/1041
+f30b59ba-07b0-45f7-8e7b-dff39db77056,Damska Bielizna,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/damska-bielizna/1042
+d99ebed6-2e32-405e-a2cc-e69f13ea63ae,Pokaż więcej...,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/artykuly-do-sprzatania/502
+c2459ddb-60ea-4b32-b52f-20364dfb5cfc,Pokaż więcej...,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/artykuly-kuchenne/961
+7da04e7a-365b-4379-8d7e-efa99126c5bd,Elektryczne i motoryzacyjne,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/elektryczne-i-motoryzacyjne/936
+73d017e2-9b96-483f-b49c-69f370258926,Opakowania do żywności,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/opakowania-do-zywnosci/520
+1994deac-d548-4c0f-bd7f-c3aeca309501,Motoryzacja,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/motoryzacja/33
+06118fc7-a769-49c5-a8f9-74443c1c3381,Produkty Elektryczne,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/produkty-elektryczne/23
+69662611-ac66-403b-a6d4-158af40b2ff7,Kiosk,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/kiosk/956
+54612ca4-018c-4ba7-b5ef-972b802734a7,Kartony,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/kartony/1018
+4c47d785-1b04-4f0e-a315-9a17d809085d,Doładowania gsm,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/doladowania-gsm/817
+13964069-29f4-4964-90b9-9ae56453dc53,Gazety,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/gazety/11
+562e7844-68b9-425f-8a3f-33a7b938dc69,Parafarmacja,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/parafarmacja/54
+c485f353-ca92-4248-b449-81905460a96f,Art. dla zwierząt,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/artykuly-dla-zwierzat/3
+da160e52-3d33-4a8a-a5d1-36406910c913,Artykuły piśmienne,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/artykuly-pismienne/1019
+95f09506-02d3-42ef-8f6c-c6c2a6c7c3df,Tekstylia,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/tekstylia/1107
+76ef0122-ab24-444f-8676-2d96d988738b,"Akcesoria, zabawki",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/akcesoria-zabawki/938
+4f85c3fb-4400-4740-b2c4-434c3d6f4260,"Żwirki, ściółki, witaminy",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/zwirki-sciolki-witaminy/531
+fcc47f52-66bc-494e-a278-75e917e75c62,Karma dla gryzoni i ptaków,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/karma-dla-gryzoni-i-ptakow/534
+48188ef7-6b16-48a0-8356-bc75b40fe861,Odzież,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/odziez/1040
+18a4736e-6ee2-4402-b774-70cf9eebcb9d,Zabawki,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/zabawki/46
+252499ed-54fe-44db-8206-3ec9e54d057e,Zabawki i akcesoria,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/zabawki-i-akcesoria/530
+e7e77979-d7f2-420f-8599-050fe02f1529,Klocki Lego,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/klocki-lego/1065
+9f2a9d9e-e167-4730-a18f-6a70d27ea235,Karma dla kota,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/karma-dla-kota/532
+f90f6b11-7ca1-40cb-a8dd-a9fcad853f93,Karma dla psów,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/karma-dla-psow/533
+6656d5cb-f0c0-4e7d-9fa6-d43ba4553f24,Zabawki,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/zabawki/968
+8f88dea0-b2fd-4f37-8531-6c940633af9b,Pluszaki,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/pluszaki/592
+659571b9-54c3-49cf-9c65-c6dacb521740,Perfumeria,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/perfumeria/978
+522dc5dd-d3a2-49fe-852a-a610569d1125,Gry i puzzle,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/gry-i-puzzle/591
+34002a8a-0bc6-4b4e-ba93-afa8ca5674cf,Produkty Do Makijażu,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/produkty-do-makijazu/980
+cd20b377-c6cf-4461-8fba-c1c9881b5720,Filmy i bajki,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/filmy-i-bajki/1066
+d0bbd7a8-c05a-41ee-a54f-647ce9f6e47d,Produkty do Paznokci,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/produkty-do-paznokci/1000
+0f939b98-b8a0-4c95-aea1-357967fb7b5d,"Chipsy, orzeszki",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/chipsy-orzeszki/1176
+c50351eb-64e9-4c33-868d-2600f2070d48,Artykuły dla psów,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/artykuly-dla-psow/1033
+07b75c22-ccae-42da-9d65-dd072fdd18bf,Pieczywo bezglutenowe,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/pieczywo-bezglutenowe/1164
+6f6add16-c657-4b8a-8b2e-81bbcdb35705,Marka własna,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/marka-wlasna/900
+d27865b4-7c49-414d-803e-d5aa0cd7d08b,Artykuły dla kotów,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/artykuly-dla-kotow/1167
+73eee60c-a928-4df8-8b7d-e828b408a37e,Oferta Wielkanocna,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/oferta-wielkanocna/1162
+4ce68d11-42f2-4db5-a8e7-97d2c535a170,Piekarnia Ozdowscy,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/piekarnia-ozdowscy/1161
+44e8ef6a-f9c0-4601-9931-90e8320205a8,Artykuły przemysłowe,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/artykuly-przemyslowe/1032
+5cc4e6cc-b5ec-4b28-9856-d5b0ebe41861,Bakalie,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/bakalie/904
+8278d01f-a693-4354-9f4b-a806f23a1d6c,Nasza kuchnia,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/nasza-kuchnia/1157
+04fb4467-df08-4ea5-b468-0487cfc4abad,"Mleko, śmietany, maślanki",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/mleko-smietany-maslanki/928
+6095f2b3-83cb-46bd-bbcd-3b1cf54693b6,Artykuły higieniczne,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/artykuly-higieniczne/1147
+1e683536-3b43-414e-b1ff-048b11c1d55b,Wypiek własny,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/wypiek-wlasny/766
+7ce2cc42-8891-40bb-94e4-0ea740184fdc,Piekarnia Ozdowscy,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/piekarnia-ozdowscy/1161
+67e912d9-84ba-4a71-93ec-f5cd7200f0a0,Artykuły dziecięce,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/artykuly-dzieciece/1168
+dab22e33-94f8-4488-a5fc-6650bf53f051,Oferta Wielkanocna,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/oferta-wielkanocna/1162
+4a693f73-c1e7-4862-a939-5813ac30dd05,"Ciastka, batony, żelki",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/ciastka-batony-zelki/1027
+c8e4c0b9-ff93-48b8-81a4-ab87c0bd4539,"Czekolady, czekoladki",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/czekolady-czekoladki/1175
+43c253dd-ceb0-45e9-9387-791a5861bcb5,Warzywa i owoce,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/warzywa-i-owoce/41
+76605b0e-a13d-49a8-9c95-b227bb1814f1,Nabiał,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/nabial/21
+e5c102ca-ee08-4a41-a18d-846df863a749,"Dżemy, konfitury, miody",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/dzemy-konfitury-miody/907
+80a985a3-7c6c-4bc4-bb59-1edf4e3d0a72,Świeże,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/swieze/269
+fafab825-8c76-4fb4-be47-3c3d72814382,Wyroby cukiernicze,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/wyroby-cukiernicze/48
+a1a63e22-2056-4411-95c5-9583dd06978a,Dania gotowe,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/dania-gotowe/905
+848249ae-8d22-4a85-bff1-7e3b13f67173,Pieczywo Trwałe Paczkowane,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/pieczywo-trwale-paczkowane/270
+5e7940ea-1dcf-483d-bb72-8f7bd76a6099,Produkty Bio,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/produkty-bio/1135
+6fa10f60-563d-49fc-b24a-ae115961eb42,Tłuszcze,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/tluszcze/248
+e2f1aa52-b79a-4991-839a-e57bac3269f6,Produkty Bez Laktozy,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/produkty-bez-laktozy/1067
+34beebca-e8f7-4532-b006-21c78f236f6c,Kawy i herbaty,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/kawy-i-herbaty/1036
+e42a0811-23e6-4598-b08a-72f12c569a54,Pieczywo Chrupkie,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/pieczywo-chrupkie/271
+c2dd9089-89d8-4ef0-8063-12b88a47a879,Pokaż więcej...,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/nabial/21
+f1158075-9252-4552-bf95-8c05e6fe6b8e,"Pieczywo, cukiernia",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/pieczywo-i-wyroby-cukiernicze/26
+0418fe90-13fe-4c02-82b9-b84c4b3387a7,Pieczywo trwałe,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/pieczywo-trwale/954
+3ef190c2-2cb2-49cc-9231-76c1e45eeed2,Produkty Świeże,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/produkty-swieze/1105
+19a7a750-03e9-4d4e-8557-22ecf0ad2875,"Sery, serki",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/sery-serki/34
+e18f713c-5932-4488-bb82-559d085d7f56,"Promocja Gazetkowa ! ",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/index/asortyment/?promocja
+185da9a5-b759-4bcc-86f4-5ae38f16627b,Pieczywo świeże,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/pieczywo-swieze/952
+3df3a099-d35e-4677-841f-a2871f9d9a04,Sery kozie,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/sery-kozie/1046
+a27398b5-e8c1-4882-bc89-9e0a7c3ab9b1,Serki homogenizowane,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/serki-homogenizowane/265
+d80575e0-a4dc-4d15-91ef-23b6a5e25e13,Dla zdrowia,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/dla-zdrowia/1160
+2729707f-4ea5-4688-91f3-84aa59070853,Nasza piekarnia,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/nasza-piekarnia/1156
+b917c5ab-1c88-482c-8f98-51203882b8e1,"Sery topione, smażone i inne",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/sery-topione-smazone-i-inne/336
+378dac1c-329b-4aca-99ed-4b39e8fefe31,Sery pleśniowe,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/sery-plesniowe/934
+5bed6565-4d0c-4e23-831a-7e9ec6641ada,"Sery żółte i pleśniowe ",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/sery-zolte-i-plesniowe/917
+94282dcc-01bb-4db3-a94e-0ef2895c2944,Warzywa,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/warzywa/691
+b6b51920-da39-4804-b778-c4553f38445b,Grzyby,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/grzyby/960
+c6cea00a-ab40-4700-9a50-e551d8e17920,Nasza kuchnia,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/nasza-kuchnia/1157
+f67f2727-20c0-4449-9ff9-c5b3c2d20a12,Jaja,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/jaja/153
+13127866-c18e-450a-b149-227773b9457a,Bakalie,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/bakalie/977
+ff958199-d1cb-40d9-b77e-8e73c2c78464,Surówki,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/surowki/854
+c82e9caa-2de2-4fc8-b944-740522bb3776,Nasza piekarnia,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/nasza-piekarnia/1156
+637a214b-12df-4a4d-88e5-5d2f8e5344e8,Owoce,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/owoce/692
+ff324d2d-f30e-4790-a91a-79b1fd962dba,Kwiaty,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/kwiaty/1029
+ea71b014-f99f-401c-b1ad-dd7dd815d064,"Budynie, kisiele, galaretki",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/budynie-kisiele-galaretki/925
+297b3136-9829-4e29-b048-4fec71c9261d,Artykuły spożywcze,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/artykuly-spozywcze/1106
+91b89e54-f072-4ec3-be9b-ec6146c7fdd4,Bezglutenowe,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/bezglutenowe/898
+75fa537b-5031-4fa2-9095-c9630f72cd49,Warzywa i Owoce Paczkowane,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/warzywa-i-owoce-paczkowane/840
+c811e754-fe25-4ae3-a2d2-b405b049b46a,"Zioła, kiełki",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/ziola-kielki/693
+92d4a19d-0929-4fcc-873e-49c3c5a1ad49,Artykuły sypkie,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/artykuly-sypkie/53
+7890cf77-8b04-4366-961c-b0e40406ff69,Inne,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/inne/599
+ae8bc09e-63b3-48d8-b00d-171fd08d2932,Produkty bezglutenowe,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/produkty-bezglutenowe/597
+0e3816ee-535d-4a3d-b074-ca1e9da432ae,Artykuły śniadaniowe,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/artykuly-sniadaniowe/945
+74b40d72-36eb-4aa1-b9ef-b8d72f2f0bab,"Cukierki, draże, gumy do żucia",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/cukierki-draze-gumy-do-zucia/916
+7beb60a5-950f-47c6-bd69-37a5024e6371,"Makarony, ryże, kasze",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/makarony-ryze-kasze/910
+13781ee4-3346-4e7b-95b5-8f1f82b5ad70,Pokaż więcej...,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/sery-serki/34
+b23ed32c-759d-41aa-96fe-621221a10b90,"Kakao, kremy czekoladowe",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/kakao-kremy-czekoladowe/155
+5091535f-87ec-4ca1-87ab-9d5d354b9dc1,Płatki i musli,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/platki-i-musli/948
+64f7ed70-6448-4e1b-a137-c6cd5f304a92,"Cukier, mąka, sól",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/cukier-maka-sol/924
+37d23ca2-3ba4-4252-b7fa-64d285446581,"Ciasta w proszku, bakalie, dodatki",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/ciasta-w-proszku-bakalie-dodatki/49
+de037c8f-152d-4ebd-bcd0-8f881f0c0175,"Oleje, oliwy",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/oleje-oliwy/953
+2aa2e6bc-0304-47f4-b60c-a8ca2d424b37,Przetwory warzywne i owocowe,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/przetwory-warzywne-i-owocowe/30
+66ff0a3c-1bb3-4746-bcd1-68ca8d81ebe9,Przetwory i przyprawy,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/przetwory-i-przyprawy/974
+a4027525-c528-4bc9-8c03-86667978376d,"Wafle, batony",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/wafle-batony/932
+8f5f5d12-f87f-413c-8138-62b1c3af51f8,Ciastka,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/ciastka/944
+6a5dbeeb-9b9d-4d7a-8c23-f530b6e932df,Zupy i dania gotowe,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/zupy-i-dania-gotowe/943
+fa4162d0-e368-4ef1-ae86-2f728cbcf989,Słodycze i przekąski,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/slodycze-i-przekaski/36
+a0737bf5-767c-48a7-a8c5-38acda83a030,Bio,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/bio/895
+7d2ac70e-c25d-42fe-9ebe-904c29b94075,Produkty BIO,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/produkty-bio/815
+533c1364-45be-4cbc-a441-d8c0af4fd2de,Produkty bez cukru,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/produkty-bez-cukru/1138
+ead32eb6-15ea-4305-ae4e-be90ff4bfeed,Dla zdrowia,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/dla-zdrowia/894
+72d7e4e4-a97f-4e5b-bf99-9674738a1eab,"Dżemy, konfitury, miody",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/dzemy-konfitury-miody/156
+13fefc40-de14-403b-9330-19544a987f80,Produkty sojowe,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/produkty-sojowe/595
+3c3025da-2ef9-4abc-89fc-6807b2bc5f79,Produkty Niskocukrowe,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/produkty-niskocukrowe/899
+327b8887-5b9e-4615-8695-e6a7c4dd0740,Produkty dla aktywnych,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/produkty-dla-aktywnych/1144
+c4c5f89d-f58b-43c6-b656-d88bb7c4f093,Produkty Ekologiczne,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/produkty-ekologiczne/896
+87826dc5-4905-465d-a54d-e8ad1e745372,"Przyprawy, sosy, koncentraty",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/przyprawy-sosy-koncentraty/164
+cd433a76-22cb-4e18-916c-c5074ab3ca60,"Produkty zbożowe, pieczywo",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/produkty-zbozowe-pieczywo/594
+7b67d3d5-5157-4fa0-a21a-734d7d44c9c4,"Chipsy, paluszki, orzeszki",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/chipsy-paluszki-orzeszki/914
+abddd0f1-8987-45d6-8579-078a1813c6f4,"Czekolady, bombonierki",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/czekolady-bombonierki/967
+a1c4a506-f68f-45b3-bf71-12afe0d52636,Produkty wegańskie,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/produkty-weganskie/1137
+5821998e-31fd-456e-b8ab-39ce8e9d6e01,"Słodycze, ciastka",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/slodycze-ciastka/596
+3b3bfc40-2f1d-478e-bb78-a037323d462b,Wędliny,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/wedliny/42
+3d4c0d66-588e-443c-890c-b7f72815b3ad,Inne mięsa,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/inne-miesa/972
+0fc5c8a5-02f8-48cf-8fce-efd2adf981c2,Konserwy,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/konserwy/1030
+88069b4e-d54a-4ba2-9104-f0ed223b7973,Kiełbasy,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/kielbasy/631
+a11bf7e4-6355-4bbd-855b-87cb0e079071,"Soki, napoje",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/soki-napoje/598
+152081c7-c5cb-4741-af9d-5a19c566c827,Mięso Wołowe,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/mieso-wolowe/937
+5ee409db-3b49-4fd2-9e47-1420e379ac6a,"Szynki, wędzonki, blokowe",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/szynki-wedzonki-blokowe/634
+fa66523e-3d68-488e-aa4f-d1a97decbd2e,Wędliny i mięso,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/wedliny-i-mieso/951
+4d789801-64ec-4d8e-9635-9640b6d847de,Mięso Wieprzowe,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/mieso-wieprzowe/958
+301243e0-c7a8-4ab0-ace8-e96bcefcf156,Mrożone Owoce Morza,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/mrozone-owoce-morza/659
+075ef542-8231-4de8-b57d-48e51657a548,Mięso Drobiowe,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/mieso-drobiowe/962
+66051cb4-135b-408d-9bef-f5d3954a7589,Przetwory rybne,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/przetwory-rybne/923
+8cae26ed-f4a6-410e-9bbc-244d3fd9790a,"Owoce morza na wagę, świeże",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/owoce-morza-na-wage-swieze/443
+4fffbd79-1d09-46f9-a280-f25164ce01fe,"Pasztety, metki",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/pasztety-metki/637
+7e803147-ddd5-45d7-ae1a-7494bf7c0bf1,Salami,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/salami/770
+45f6ce8d-f10e-4d13-afc5-83dbe5006819,Owoce morza,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/owoce-morza/319
+ae1518de-4efe-4619-96c8-2d5bacae521b,Garmażerka rybna,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/garmazerka-rybna/318
+98a22851-5d88-4f2d-bf85-69abf0d624c1,Paczkowane Owoce Morza,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/paczkowane-owoce-morza/444
+3e259310-6bc7-44df-be28-fa542bc971c7,Konserwy rybne,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/konserwy-rybne/321
+e49c068d-cf0e-4e11-a8d6-ec11eb730868,Ryby wędzone,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/ryby-wedzone/314
+0a81b632-e308-482a-9860-5f29a2f35f49,Ryby mrożone,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/ryby-mrozone/933
+523dc161-02c2-44a5-bfe1-f06ce16b971f,Ryby surowe,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/ryby-surowe/316
+1b4d2fef-532c-407b-a428-cd9fbcf1d780,Rybne marynowane,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/rybne-marynowane/312
+a20708ba-6801-4095-99bc-c931eedef56e,Ryby Wędzone Na Wagę,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/ryby-wedzone-na-wage/445
+0cd94bf0-27c1-413e-a4bf-c2eaaa0d1c36,"Woda i napoje ",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/woda-i-napoje/22
+51566861-cf34-4784-8e66-495a97a03de2,Ryby mrożone,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/ryby-mrozone/313
+9779f815-3560-4e63-9919-6b4c6fa7cb9d,Sałatki rybne,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/salatki-rybne/317
+fa5b1333-a8a7-4ecd-9c35-efb74dc0ae14,Ryby Wędzone Paczkowane,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/ryby-wedzone-paczkowane/446
+9f838975-f9bb-4520-bfa9-9ce1d434d5cf,Energetyki i izotoniczne,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/energetyki-i-izotoniczne/969
+259908a4-fad3-4159-a8cd-91f2a0475059,Energetyki,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/energetyki/549
+b6a17319-1f1e-4a35-8142-cb2e4ccccaf7,Izotoniki,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/izotoniki/844
+c102c9f0-1dd8-411c-a92c-b915c0443b12,Napoje Niegazowane,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/napoje-niegazowane/548
+c21c516f-e499-45e9-8edf-164723238844,Inne Wody,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/inne-wody/1134
+3303137e-c24c-48c4-bc0d-41cdb72dfb71,Piwa bezalkoholowe,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/piwa-bezalkoholowe/1141
+8111ac40-8e79-4275-8f31-5caa633b3738,Napoje gazowane i niegazowane,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/napoje-gazowane-i-niegazowane/546
+07b59415-239a-4081-bc88-524a7c070d78,Granulaty,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/granulaty/851
+5281e24f-9cb4-46f7-b856-7cb6511f2956,"Soki, nektary",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/soki-nektary/912
+41fad043-7ce7-4ed4-b14c-99620f15cb62,Soki,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/soki/541
+ddf1911a-0730-4802-a8c6-8613ca204c9e,Woda Gazowana,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/woda-gazowana/697
+9e42968b-b064-42cc-9c76-d5c1f8c3f53d,Napoje Gazowane,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/napoje-gazowane/547
+5bf294b3-202e-45a4-920c-fa29d18ef88a,Woda Niegazowana,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/woda-niegazowana/698
+84a485f5-070d-4c40-9e20-adf95800f2fd,Nektary,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/nektary/544
+b3872c8b-81e2-42db-9b4b-cffc68918a15,Soki i napoje dla dzieci,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/soki-i-napoje-dla-dzieci/1061
+6b3b3752-31dd-4609-934a-12058bdd420c,Kuchnie świata,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/kuchnie-swiata/776
+ceac1079-3e16-4dd6-9684-c508b523116d,Wina bezalkoholowe,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/wina-bezalkoholowe/1140
+cf3edb13-11ab-4b1b-b1e4-8826510dda37,Kuchnia meksykańska,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/kuchnia-meksykanska/892
+c928f04c-225a-4261-9002-5631929588e2,Woda Lekko gazowana,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/woda-lekko-gazowana/1049
+c4bbed19-de6f-4429-bf37-a0ffa072324e,Kuchnia śródziemnomorska,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/kuchnia-srodziemnomorska/891
+97ef2a58-b271-4ef3-a597-5d6a499e4ad9,"Syropy, granulaty i tabletki",0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/syropy-granulaty-i-tabletki/964
+56091c42-d4db-4969-b239-e8fa3c5cabe0,Syropy,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/syropy/550
+d8bd35de-b0ed-4528-b611-bf2537d233a7,Kuchnie świata,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/kuchnie-swiata/149
+c6e60d89-6379-474f-9df6-d4a491fbce30,Dania gotowe,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/garmazerka-i-gastronomia/955
+965a50d1-f30e-4c79-a787-7cec52c6cee2,Pozostałe,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/pozostale/893
+35a5aab2-ff2b-40b0-9ebe-220449d929f2,Przybory szkolne,0,bd3c661b-0984-453d-9473-dc738c79c0bf,Spar,https://e-spar.com.pl/kategoria/przybory-szkolne/1055

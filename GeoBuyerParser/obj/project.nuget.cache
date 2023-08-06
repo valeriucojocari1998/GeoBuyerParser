@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "8bmB38OKS8icmvRT+09DsyHt92hHLE5zq0aqw2z2fZK1uiSP5dEZY/J757aDp7J5EVEvPHTkfTsmw6zhr7OsLA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Alvys-Dev\\Documents\\Valeriu-Projects\\GeoBuyerParser\\GeoBuyerParser\\GeoBuyerParser.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Alvys-Dev\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512",
+    "C:\\Users\\Alvys-Dev\\.nuget\\packages\\htmlagilitypack\\1.11.50\\htmlagilitypack.1.11.50.nupkg.sha512",
+    "C:\\Users\\Alvys-Dev\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
