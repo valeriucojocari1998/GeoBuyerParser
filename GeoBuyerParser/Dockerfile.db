@@ -1,0 +1,5 @@
+# Use the official SQLite image
+FROM dockerpinata/sqlite:latest
+
+# Copy your database file to the container
+COPY app.db /var/lib/sqlite/
