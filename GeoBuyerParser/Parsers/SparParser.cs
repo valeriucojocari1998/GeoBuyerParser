@@ -1,10 +1,10 @@
-﻿using GeoBuyerPromotion.Helpers;
-using GeoBuyerPromotion.Models;
+﻿using GeoBuyerParser.Helpers;
+using GeoBuyerParser.Models;
 using HtmlAgilityPack;
 
-namespace GeoBuyerPromotion.Parsers;
+namespace GeoBuyerParser.Parsers;
 
-public class SparParser: IParser
+public class SparParser
 {
     public readonly string defaultUrl = "https://e-spar.com.pl";
     public List<Category> GetCategories(string html)

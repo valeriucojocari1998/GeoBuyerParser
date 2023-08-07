@@ -1,6 +1,7 @@
-﻿using GeoBuyerPromotion.Models;
+﻿using GeoBuyerParser.DB;
+using GeoBuyerParser.Models;
 
-namespace GeoBuyerPromotion.Repositories;
+namespace GeoBuyerParser.Repositories;
 
 
 // This Config will be removed when the db will be ready
@@ -14,50 +15,72 @@ public record RepositoryConfig
         new Spot("bd3c661b-0984-453d-9473-dc738c79c0bf", "Spar")
     };
 }
-public record Repository : IRepository
+public class Repository
 {
-    public string Container { get; }
-    public string DbName { get; }
+    private readonly AppDbContext _dbContext;
 
-
-
-    public Repository(string container, string dbName)
+    public Repository(AppDbContext dbContext)
     {
-        this.Container = container;
-        this.DbName = dbName;
+        _dbContext = dbContext;
+
     }
 
-    public Spot GetSpotByProvider(string spotProvider)
+    public Spot GetSpotById(string id)
     {
-        return RepositoryConfig.Spots.FirstOrDefault(x => x.provider == spotProvider)!;
+        try
+        {
+            return _dbContext.Spots.First(x => x.id == id);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            throw;
+        }
     }
 
-    public List<Spot> GetSpots()
+    public Spot GetSpotByProvider(string spotName)
     {
-        return RepositoryConfig.Spots;
+        try
+        {
+            return _dbContext.Spots.First(x => x.provider == spotName);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            throw;
+        }
     }
-    public void InsertSpots(List<Spot> markets)
+
+    public IEnumerable<Spot> GetAllSpots()
     {
-        throw new NotImplementedException();
+        return _dbContext.Spots.ToList();
+    }
+
+    public void InsertSpots(IEnumerable<Spot> spots)
+    {
+        _dbContext.Spots.AddRange(spots);
+        _dbContext.SaveChanges();
     }
 
     public List<ExtendedCategory> GetCategories()
     {
-        throw new NotImplementedException();
-    }
+        return _dbContext.Categories.ToList();
 
-    public void InsertCategories(List<ExtendedCategory> category)
+    }
+    public void InsertCategories(IEnumerable<ExtendedCategory> categories)
     {
-        throw new NotImplementedException();
+        _dbContext.Categories.AddRange(categories);
+        _dbContext.SaveChanges();
     }
 
     public List<ExtendedProduct> GetProducts()
     {
-        throw new NotImplementedException();
+        return _dbContext.Products.ToList();
     }
 
-    public void InsertProducts(List<ExtendedProduct> product)
+    public void InsertProducts(IEnumerable<ExtendedProduct> products)
     {
-        throw new NotImplementedException();
+        _dbContext.Products.AddRange(products);
+        _dbContext.SaveChanges();
     }
 }

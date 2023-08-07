@@ -1,10 +1,10 @@
-﻿using GeoBuyerPromotion.Helpers;
-using GeoBuyerPromotion.Models;
+﻿using GeoBuyerParser.Helpers;
+using GeoBuyerParser.Models;
 using HtmlAgilityPack;
 
-namespace GeoBuyerPromotion.Parsers;
+namespace GeoBuyerParser.Parsers;
 
-public class KauflandParser : IParser
+public class KauflandParser
 {
     public readonly string defaultUrl = "https://www.kaufland.pl";
     public List<Category> GetCategories(string html)

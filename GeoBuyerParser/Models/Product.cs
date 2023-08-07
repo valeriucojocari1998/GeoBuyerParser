@@ -1,4 +1,4 @@
-﻿namespace GeoBuyerPromotion.Models;
+﻿namespace GeoBuyerParser.Models;
 
 public record Product(
     string id,

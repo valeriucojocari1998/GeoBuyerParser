@@ -1,4 +1,4 @@
-﻿namespace GeoBuyerPromotion.Models;
+﻿namespace GeoBuyerParser.Models;
 
 public record Category(string id, string name, string categoryUrl, int? productCount = null)
 {

@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 using System.Text.RegularExpressions;
 
-namespace GeoBuyerPromotion.Helpers;
+namespace GeoBuyerParser.Helpers;
 
 public record ParserHelper
 {

@@ -1,10 +1,10 @@
-﻿using GeoBuyerPromotion.Helpers;
-using GeoBuyerPromotion.Models;
+﻿using GeoBuyerParser.Helpers;
+using GeoBuyerParser.Models;
 using HtmlAgilityPack;
 
-namespace GeoBuyerPromotion.Parsers;
+namespace GeoBuyerParser.Parsers;
 
-internal class LidlParser : IParser
+public class LidlParser
 {
     public readonly string defaultUrl = "https://www.lidl.pl";
     public List<Category> GetCategories(string html)
