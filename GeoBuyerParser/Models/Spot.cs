@@ -1,3 +1,3 @@
 ﻿namespace GeoBuyerParser.Models;
 
-public record Spot(string id, string provider, string? name = null, string? latitude = null, string? longitude = null);
+public record Spot(string id, string provider, string? name = null, string? latitude = null, string? longitude = null, string? url = null, string? imageUrl = null);

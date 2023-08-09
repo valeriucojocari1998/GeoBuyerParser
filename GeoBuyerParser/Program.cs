@@ -13,8 +13,6 @@ public class Program
         var host = CreateHostBuilder(args).Build();
         var serviceProvider = host.Services;
 
-        var repository = serviceProvider.GetRequiredService<Repository>();
-
         var biedronkaService = serviceProvider.GetRequiredService<BiedronkaService>();
         var kauflandService = serviceProvider.GetRequiredService<KauflandService>();
         var lidlService = serviceProvider.GetRequiredService<LidlService>();

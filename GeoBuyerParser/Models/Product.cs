@@ -14,17 +14,17 @@ public record ExtendedProduct(
     string id,
     string name,
     decimal currentPrice,
-    string categoryId,
-    string categoryName,
     string marketId,
     string marketProvider,
+    string? categoryId = null,
+    string? categoryName = null,
     decimal? oldPrice = null,
     string? brand = null,
     string? priceLabel = null,
     string? saleSpecification = null,
     string? imageUrl = null)
 {
-    public ExtendedProduct(Product product, Category category, Spot market)
+    public ExtendedProduct(Product product, Spot market, Category? category = null)
         : this(
               id: product.id,
               name: product.name,
@@ -34,8 +34,8 @@ public record ExtendedProduct(
               priceLabel: product.priceLabel,
               saleSpecification: product.saleSpecification,
               imageUrl: product.imageUrl,
-              categoryId: category.id,
-              categoryName: category.name,
+              categoryId: category?.id,
+              categoryName: category?.name,
               marketId: market.id,
               marketProvider: market.provider)
     { }
