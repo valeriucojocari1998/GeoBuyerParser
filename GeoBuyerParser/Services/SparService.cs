@@ -29,7 +29,7 @@ public class SparService
         {
             var (newCategory, products) = await GetProductsByCategory(category);
             newCategories.Add(newCategory);
-            return products.Select(product => new ExtendedProduct(product, category, spot));
+            return products.Select(product => new ExtendedProduct(product, spot, category));
         }));
 
         var extendedCategories = newCategories.Select(cat => new ExtendedCategory(cat, spot)).ToList();

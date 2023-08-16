@@ -59,11 +59,11 @@ public record GazetkiParser
         if (linkNodes == null)
             return 0;
 
-        var offertNodes = linkNodes.FirstOrDefault(x => x.Attributes["href"]?.ToString()?.Contains("oferty") ?? false);
+        var offertNodes = linkNodes.FirstOrDefault(x => x.Attributes["href"]?.Value.Contains("oferty") ?? false);
         if (offertNodes == null)
             return 0;
 
-        var totalText = offertNodes.SelectSingleNode("./span[contains(@class, 'ml-1 badge rounded-pill bg-tertiary')]").InnerText;
+        var totalText = offertNodes.SelectSingleNode("./span[contains(@class, 'ml-1 badge rounded-pill bg-tertiary')]")?.InnerText;
         return int.TryParse(totalText, out var x) ? x : 0;
     }
 
@@ -89,11 +89,9 @@ public record GazetkiParser
         handler.AutomaticDecompression = ~DecompressionMethods.None;
 
         using var httpClient = new HttpClient(handler);
-        var request = new HttpRequestMessage(HttpMethod.Get, $"{url}/offers/dynamic/{page}");
+        var request = new HttpRequestMessage(HttpMethod.Get, $"{url}offers/dynamic/{page}");
 
-        request.Headers.TryAddWithoutValidation("authority", "www.gazetki.pl");
-        request.Headers.TryAddWithoutValidation("accept", "application/json, text/plain, */*");
-        // ... (other headers)
+        request.Headers.TryAddWithoutValidation("x-csrf", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHBpcmVzIjoxNjkyMjAxNzE2fQ.av2WPGeKYQGE574ksSOeE52IIqbQWOUVSpQ659ZqMOA");
 
         var response = await httpClient.SendAsync(request);
 
@@ -103,22 +101,26 @@ public record GazetkiParser
 
             var parsedData = Newtonsoft.Json.JsonConvert.DeserializeObject<Root>(responseContent);
 
-            // Convert the items to the Product type
-            foreach (var item in parsedData.items)
+            if (parsedData != null)
             {
-                var product = new Product(
-                    id: item.id.ToString(),
-                    name: item.name,
-                    currentPrice: decimal.Parse(item.offer_price.Replace(" zł", "").Replace(",", ".")),
-                    oldPrice: item.normal_price_flat != null ? (decimal)item.normal_price_flat : (decimal?)null,
-                    brand: item.store.is_brand ? item.store.name : null,
-                    priceLabel: item.sub_title,
-                    saleSpecification: item.end_date_template,
-                    imageUrl: item.image_tn?.url
-                );
+                // Convert the items to the Product type
+                foreach (var item in parsedData.items)
+                {
+                    var product = new Product(
+                        id: item.id.ToString(), //guid
+                        name: item.name,
+                        currentPrice: (decimal)(item.offer_price_flat ?? 0),
+                        oldPrice: (decimal)(item.normal_price_flat ?? 0),
+                        brand: item.store?.is_brand == true ? item.store?.name : null,
+                        priceLabel: item.sub_title,
+                        saleSpecification: item.end_date_template,
+                        imageUrl: item.image_tn?.url
+                    );
 
-                products.Add(product);
+                    products.Add(product);
+                }
             }
+                
         }
         else
         {
@@ -127,6 +129,7 @@ public record GazetkiParser
 
         return products;
     }
+}
 
     public class Image
 {

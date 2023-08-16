@@ -28,7 +28,7 @@ public record GazetkiService
             var link = BaseUrl + x.url!;
             var html = await HtmlSourceManager.DownloadHtmlSourceCode(link);
             var total = Parser.GetProductCount(html);
-            var newUrl = link.Substring(0, link.Length - 7);
+            var newUrl = link.Substring(0, link.Length - 7).Replace("sklepy", "stores");
             var newProducts = await Parser.GetProducts(newUrl, total);
             var extenderProducts = newProducts.Select(p => new ExtendedProduct(p, x));
             return extenderProducts.ToList();

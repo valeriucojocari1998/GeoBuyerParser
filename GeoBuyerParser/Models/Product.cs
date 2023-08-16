@@ -13,6 +13,7 @@ public record Product(
 public record ExtendedProduct(
     string id,
     string name,
+    DateTimeOffset dateCreated,
     decimal currentPrice,
     string marketId,
     string marketProvider,
@@ -28,6 +29,7 @@ public record ExtendedProduct(
         : this(
               id: product.id,
               name: product.name,
+              dateCreated: DateTimeOffset.UtcNow,
               currentPrice: product.currentPrice,
               oldPrice: product.oldPrice,
               brand: product.brand,
