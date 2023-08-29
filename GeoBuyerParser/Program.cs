@@ -40,7 +40,8 @@ public class Program
              // Register DbContext as Scoped
              services.AddDbContext<AppDbContext>(options =>
              {
-                 options.UseSqlite("Data Source=C:/Users/admin/Documents/Personal-Projects/GeoBuyerParser/GeoBuyerParser/app.db");
+                //options.UseSqlite("Data Source=C:/Users/admin/Documents/Personal-Projects/GeoBuyerParser/GeoBuyerParser/app.db");
+                options.UseSqlite("Data Source=./app.db");
              }, ServiceLifetime.Singleton);
 
              // Register Parsers as Singleton

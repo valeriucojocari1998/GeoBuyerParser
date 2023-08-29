@@ -1,0 +1,30 @@
+version: '3.7'
+
+services:
+  # db:
+  #   build:
+  #     context: .
+  #     dockerfile: ./Dockerfile.db
+  #   container_name: geo-buyer-parser-db
+  #   volumes:
+  #     - ./_db/:/root/db/
+  #   networks:
+  #     - appnetwork
+
+  webapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: geo-buyer-parser
+    # links:
+    #   - db
+    ports:
+      - "8080:80"
+    # depends_on:
+    #   - db
+    networks:
+      - appnetwork
+
+networks:
+  appnetwork:
+    driver: bridge
