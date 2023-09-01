@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\admin\\Documents\\Personal-Projects\\GeoBuyerParser\\GeoBuyerParser\\GeoBuyerParser.csproj": {}
+    "C:\\Users\\Alvys-Dev\\Documents\\Valeriu-Projects\\GeoBuyerParser\\GeoBuyerParser\\GeoBuyerParser.csproj": {}
   },
   "projects": {
-    "C:\\Users\\admin\\Documents\\Personal-Projects\\GeoBuyerParser\\GeoBuyerParser\\GeoBuyerParser.csproj": {
+    "C:\\Users\\Alvys-Dev\\Documents\\Valeriu-Projects\\GeoBuyerParser\\GeoBuyerParser\\GeoBuyerParser.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\admin\\Documents\\Personal-Projects\\GeoBuyerParser\\GeoBuyerParser\\GeoBuyerParser.csproj",
+        "projectUniqueName": "C:\\Users\\Alvys-Dev\\Documents\\Valeriu-Projects\\GeoBuyerParser\\GeoBuyerParser\\GeoBuyerParser.csproj",
         "projectName": "GeoBuyerParser",
-        "projectPath": "C:\\Users\\admin\\Documents\\Personal-Projects\\GeoBuyerParser\\GeoBuyerParser\\GeoBuyerParser.csproj",
-        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\admin\\Documents\\Personal-Projects\\GeoBuyerParser\\GeoBuyerParser\\obj\\",
+        "projectPath": "C:\\Users\\Alvys-Dev\\Documents\\Valeriu-Projects\\GeoBuyerParser\\GeoBuyerParser\\GeoBuyerParser.csproj",
+        "packagesPath": "C:\\Users\\Alvys-Dev\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Alvys-Dev\\Documents\\Valeriu-Projects\\GeoBuyerParser\\GeoBuyerParser\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Alvys-Dev\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -84,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     }
