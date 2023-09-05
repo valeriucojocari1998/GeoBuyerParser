@@ -20,7 +20,7 @@ public class SparService
         Parser = parser;
     }
 
-    public async Task GetProducts()
+    public async Task<List<ExtendedProduct>> GetProducts()
     {
         var spot = Repository.GetSpotByProvider(Spot);
         var categories = await GetCategories();
@@ -36,6 +36,7 @@ public class SparService
         var extendedProducts = productsLists.SelectMany(pr => pr).ToList();
         Repository.InsertCategories(extendedCategories);
         Repository.InsertProducts(extendedProducts);
+        return extendedProducts;
     }
 
     public async Task<List<Category>> GetCategories()

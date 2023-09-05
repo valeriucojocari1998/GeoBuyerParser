@@ -91,7 +91,7 @@ public record GazetkiParser
         using var httpClient = new HttpClient(handler);
         var request = new HttpRequestMessage(HttpMethod.Get, $"{url}offers/dynamic/{page}");
 
-        request.Headers.TryAddWithoutValidation("x-csrf", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHBpcmVzIjoxNjkyMjAxNzE2fQ.av2WPGeKYQGE574ksSOeE52IIqbQWOUVSpQ659ZqMOA");
+        request.Headers.TryAddWithoutValidation("x-csrf", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHBpcmVzIjoxNjkzODcwNjQ1fQ.-VLfvbX7EoON9Cc3lIHsvoO1q2sgIu80HtLZSjhQbGY");
 
         var response = await httpClient.SendAsync(request);
 

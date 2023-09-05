@@ -19,7 +19,7 @@ public record GazetkiService
         Repository = repository;
         Parser = parser;
     }
-    public async Task GetProducts()
+    public async Task<List<ExtendedProduct>> GetProducts()
     {
         var spots = await GetSpotsInternal();
 
@@ -38,7 +38,7 @@ public record GazetkiService
         var products = productLists.SelectMany(list => list).ToList();
         Repository.InsertSpots(spots);
         Repository.InsertProducts(products);
-
+        return products;
     }
 
     public async Task<List<Spot>> GetSpotsInternal()

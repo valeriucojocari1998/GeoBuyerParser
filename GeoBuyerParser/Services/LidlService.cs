@@ -19,7 +19,7 @@ public record LidlService
         Repository = repository;
         Parser = parser;
     }
-    public async Task GetProducts()
+    public async Task<List<ExtendedProduct>> GetProducts()
     {
         var spot = Repository.GetSpotByProvider(Spot);
         var categories = await GetCategories();
@@ -35,6 +35,7 @@ public record LidlService
         var extendedProducts = productsLists.SelectMany(pr => pr).ToList();
         Repository.InsertCategories(extendedCategories);
         Repository.InsertProducts(extendedProducts);
+        return extendedProducts;
     }
 
     public async Task<List<Category>> GetCategories()

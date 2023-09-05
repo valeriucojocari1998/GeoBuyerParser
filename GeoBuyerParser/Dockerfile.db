@@ -1,7 +1,8 @@
-# Use the official SQLite image
-#FROM dockerpinata/sqlite:latest
-FROM nouchka/sqlite3:latest
+# Use an unofficial SQLite image
+FROM sqlite:latest
 
-# Copy your database file to the container
-#COPY app.db /var/lib/sqlite/
-COPY app.db /root/db/
+# Set the working directory inside the container
+WORKDIR /data
+
+# Copy your SQLite database file into the container
+COPY your-database-file.sqlite /data/

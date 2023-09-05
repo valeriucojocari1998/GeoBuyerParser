@@ -5,7 +5,10 @@ namespace GeoBuyerParser.DB;
 
 public class AppDbContext : DbContext
 {
-    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) 
+    {
+        Database.EnsureCreated();
+    }
 
     public DbSet<Spot> Spots { get; set; }
     public DbSet<ExtendedCategory> Categories { get; set; }
