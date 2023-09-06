@@ -1,22 +1,14 @@
-# Use the official .NET SDK image as the base image for building your application
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
-WORKDIR /app
+# Use a Windows Server Core-based image
+FROM mcr.microsoft.com/windows/servercore:ltsc2019
 
-# Copy the .csproj and restore dependencies
-COPY *.csproj ./
-RUN dotnet restore
+# Create a directory for your application
+WORKDIR C:\\app
 
-# Copy the rest of the application code
-COPY . ./
-RUN dotnet publish -c Release -o out
+# Copy the necessary files into the container
+COPY . .
 
-# Build the runtime image using the ASP.NET runtime image
-FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS runtime
-WORKDIR /app
-COPY --from=build /app/out ./
+# Set the working directory for your application
+WORKDIR C:\\app
 
-# Expose the port that your ASP.NET Core application listens on (e.g., 80)
-EXPOSE 80
-
-# Specify the entry point to run your application
+# Add an ENTRYPOINT to specify the command to run when the container starts
 ENTRYPOINT ["dotnet", "GeoBuyerParser.dll"]
