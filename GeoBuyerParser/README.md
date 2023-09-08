@@ -3,10 +3,15 @@ docker run -d --name geo-buyer-parser-db -v /path/on/host:/var/lib/sqlite valeri
 docker run -d -p 8080:80 --name geo-buyer-parser --link geo-buyer-parser-db valeriucoj/geo-buyer-parser
 
 
-# via docker-composer
+# via docker-compose
 ```
 cd GeoBuyerParser
-docker-composer up -d
+docker-compose up -d
+```
+
+# start parce product
+```
+http://0.0.0.0:8081/api/ParseProducts
 ```
 
 #connect into container

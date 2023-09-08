@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     container_name: geo-buyer-parser
     ports:
-      - "8081:8080"
+      - "8081:8081"
     networks:
       - appnetwork
 
