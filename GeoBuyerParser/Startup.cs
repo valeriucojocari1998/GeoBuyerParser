@@ -42,6 +42,7 @@ public class Startup
         services.AddScoped<LidlService>();
         services.AddScoped<SparService>();
         services.AddScoped<GazetkiService>();
+        services.AddScoped<ProductService>();
 
         // Add necessary services for the web API
         services.AddControllers()

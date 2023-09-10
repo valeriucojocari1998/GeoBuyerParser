@@ -1,4 +1,5 @@
 ﻿using GeoBuyerParser.Repositories;
+using GeoBuyerParser.Services;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -18,6 +19,7 @@ public class Program
             var configSpots = RepositoryConfig.Spots;
             var missing = configSpots.Except(spots).ToList();
             repository.InsertSpots(missing);
+            await GazetkiService.GetCSRF();
             await host.RunAsync();
         }
     }

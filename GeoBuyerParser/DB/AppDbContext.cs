@@ -13,4 +13,6 @@ public class AppDbContext : DbContext
     public DbSet<Spot> Spots { get; set; }
     public DbSet<ExtendedCategory> Categories { get; set; }
     public DbSet<ExtendedProduct> Products { get; set; }
+    public DbSet<Newspaper> Newspapers { get; set; }
+    public DbSet<NewspaperPage> NewspaperPages { get; set; }
 }

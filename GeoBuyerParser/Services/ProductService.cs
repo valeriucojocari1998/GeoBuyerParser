@@ -18,4 +18,11 @@ public class ProductService
     {
         return Repository.GetProducts();
     }
+
+    public void AddOrOverrideProducts(List<ExtendedProduct> products)
+    {
+        var ids = products.Select(x => x.id).ToList();
+        Repository.DeleteProductsByIds(ids);
+        Repository.InsertProducts(products);
+    }
 }

@@ -83,4 +83,37 @@ public class Repository
         _dbContext.Products.AddRange(products);
         _dbContext.SaveChanges();
     }
+
+    public void DeleteProductsByIds(List<string> productIds)
+    {
+        try
+        {
+            // Find the products to delete based on their IDs
+            var productsToDelete = _dbContext.Products.Where(p => productIds.Contains(p.id)).ToList();
+
+            if (productsToDelete.Any())
+            {
+                _dbContext.Products.RemoveRange(productsToDelete);
+                _dbContext.SaveChanges();
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            throw;
+        }
+    }
+
+    public void InsertNewspapers(IEnumerable<Newspaper> newspapers)
+    {
+        _dbContext.Newspapers.AddRange(newspapers);
+        _dbContext.SaveChanges();
+    }
+
+    public void InserNewspapersPages(IEnumerable<NewspaperPage> pages)
+    {
+        _dbContext.NewspaperPages.AddRange(pages);
+        _dbContext.SaveChanges();
+    }
+
 }
