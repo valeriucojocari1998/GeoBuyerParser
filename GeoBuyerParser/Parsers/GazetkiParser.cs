@@ -1,11 +1,7 @@
 ﻿using GeoBuyerParser.Helpers;
 using GeoBuyerParser.Models;
 using HtmlAgilityPack;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
-using System;
 using System.Net;
-using static System.Net.WebRequestMethods;
 
 namespace GeoBuyerParser.Parsers;
 
@@ -14,9 +10,18 @@ public record GazetkiParser
 
     public List<Spot> GetSpots(string html)
     {
-        HtmlDocument doc = new HtmlDocument();
-        doc.LoadHtml(html);
-        return GetSpotsInternal(doc);
+        try
+        {
+            HtmlDocument doc = new HtmlDocument();
+            doc.LoadHtml(html);
+            return GetSpotsInternal(doc);
+        }
+        catch (Exception ex)
+        {
+            // Handle the exception here.
+            Console.WriteLine("Error in GetSpots: " + ex.Message);
+            return new List<Spot>();
+        }
     }
 
     public List<Spot> GetSpotsInternal(HtmlDocument document)
@@ -52,41 +57,69 @@ public record GazetkiParser
 
     public List<Newspaper> GetNewspapers(string html, string spotId)
     {
-        HtmlDocument document = new HtmlDocument();
-        document.LoadHtml(html);
-        var newsPaperNodes = document.DocumentNode.SelectNodes("//div[contains(@class, 'store-flyer')]");
-        if (newsPaperNodes == null)
-            return new List<Newspaper>();
-
-        return newsPaperNodes.Select(node =>
+        try
         {
-            string id = new Guid().ToString();
-            string name = "";
-            string newspaperCode = "";
-            string url = "";
-            string imageUrl = "";
-            string? validInfo = null;
-            string? type = null;
-            string? description = null;
+            HtmlDocument document = new HtmlDocument();
+            document.LoadHtml(html);
+            var newsPaperNodes = document.DocumentNode.SelectNodes("//div[contains(@class, 'store-flyer mb-3')]");
+            if (newsPaperNodes == null)
+                return new List<Newspaper>();
 
-            var infoNode = node.SelectSingleNode(".//div[contains(@class, 'store-flyer__info')]");
-            var urlNode = node.SelectSingleNode(".//a[contains(@class, 'store-flyer__image')]");
-            url = urlNode.Attributes["href"].Value;
-            newspaperCode = url.Split('-').Last();
-            var imageNode = urlNode.SelectSingleNode(".//img[contains(@class, 'v-lazy-image-loaded')]");
-            imageUrl = imageNode.Attributes["src"].Value;
-            var nameNode = infoNode.SelectSingleNode(".//h3");
-            name = ParserHelper.RemoveMultipleSpaces(nameNode.InnerText);
-            var validInfoNode = infoNode.SelectSingleNode(".//small");
-            validInfo = ParserHelper.RemoveMultipleSpaces(validInfoNode.InnerText);
-            var typeNode = infoNode.SelectSingleNode(".//div[contains(@class, 'store-flyer__trend')]");
-            type = ParserHelper.RemoveMultipleSpaces(typeNode.InnerText);
-            var descriptionNode = infoNode.SelectSingleNode(".//p");
-            description = ParserHelper.RemoveMultipleSpaces(descriptionNode.InnerText);
+            return newsPaperNodes.Select(node =>
+            {
+                try
+                {
+                    string id = new Guid().ToString();
+                    string name = "";
+                    string newspaperCode = "";
+                    string url = "";
+                    string imageUrl = "";
+                    string? validInfo = null;
+                    string? type = null;
+                    string? description = null;
 
+                    var infoNode = node.SelectSingleNode(".//div[contains(@class, 'store-flyer__info')]");
+                    var urlNode = node.SelectSingleNode(".//a[contains(@class, 'store-flyer__image')]");
+                    if (urlNode != null)
+                    {
+                        url = urlNode.Attributes["href"].Value;
+                        newspaperCode = url.Split('-').Last();
+                        var imageNode = urlNode.SelectSingleNode(".//img[contains(@class, 'v-lazy-image-loaded')]");
+                        if (imageNode != null)
+                            imageUrl = imageNode?.Attributes["src"].Value;
+                    }
+                    if (infoNode != null)
+                    {
+                        var nameNode = infoNode.SelectSingleNode(".//h3");
+                        if (nameNode != null)
+                            name = ParserHelper.RemoveMultipleSpaces(nameNode.InnerText);
+                        var validInfoNode = infoNode.SelectSingleNode(".//small");
+                        if (validInfoNode != null)
+                            validInfo = ParserHelper.RemoveMultipleSpaces(validInfoNode.InnerText);
+                        var typeNode = infoNode.SelectSingleNode(".//div[contains(@class, 'store-flyer__trend')]");
+                        if (typeNode != null)
+                            type = ParserHelper.RemoveMultipleSpaces(typeNode.InnerText);
+                        var descriptionNode = infoNode.SelectSingleNode(".//p");
+                        if (descriptionNode != null)
+                            description = ParserHelper.RemoveMultipleSpaces(descriptionNode.InnerText);
+                    }
 
-            return new Newspaper(id: Guid.NewGuid().ToString(), name: name, newspaperCode: newspaperCode, spotId: spotId, url: url, imageUrl: imageUrl, validInfo: validInfo, type: type, description: description);
-        }).ToList();
+                    return new Newspaper(id: Guid.NewGuid().ToString(), name: name, newspaperCode: newspaperCode, spotId: spotId, url: url, imageUrl: imageUrl, validInfo: validInfo, type: type, description: description);
+                }
+                catch (Exception ex)
+                {
+                    // Handle the exception for this specific node.
+                    Console.WriteLine("Error in GetNewspapers: " + ex.Message);
+                    return null; // Skip this newspaper or handle the error as needed.
+                }
+            }).ToList().Where(x => x != null).ToList();
+        }
+        catch (Exception ex)
+        {
+            // Handle the exception here.
+            Console.WriteLine("Error in GetNewspapers: " + ex.Message);
+            return new List<Newspaper>();
+        }
     }
 
     public int GetNewspaperPagesCount(string html)
@@ -101,23 +134,30 @@ public record GazetkiParser
 
     public async Task<(NewspaperPage page, List<ExtendedProduct>? products)> GetNewspaperPage(string html, string pageNumber, string newspaperId, string url, Spot spot)
     {
-        HtmlDocument document = new HtmlDocument();
-        document.LoadHtml(html);
-        var newsPaperNode = document.DocumentNode.SelectSingleNode($"//div[contains(@id, 'zoomer' + {pageNumber})]");
-        if (newsPaperNode == null)
-            return (null, null);
-        var imageNode = newsPaperNode.SelectSingleNode(".//img");
-        var newPage = new NewspaperPage(id: new Guid().ToString(), page: pageNumber, newspaperId: newspaperId, pageUrl: url, imageUrl: imageNode.Attributes["src"].Value);
-        var productNodes = newsPaperNode.SelectNodes(".//div[contains(@class, 'markerIconHolder')]");
-        var productCodes = productNodes.Select(x => x.GetAttributeValue("onclick", "").Split('(').Last().Split(')').First());
-        var productTaks = productCodes.Select(async x => await DownloadProductInfoByCode(x));
+        try
+        {
+            HtmlDocument document = new HtmlDocument();
+            document.LoadHtml(html);
+            var newsPaperNode = document.DocumentNode.SelectSingleNode($"//*[@id='zoomer{pageNumber}']");
+            if (newsPaperNode == null)
+                return (null, null);
+            var imageNode = newsPaperNode.SelectSingleNode(".//img");
+            var newPage = new NewspaperPage(id: new Guid().ToString(), page: pageNumber, newspaperId: newspaperId, pageUrl: url, imageUrl: imageNode?.Attributes["src"].Value);
+            var productNodes = newsPaperNode.SelectNodes(".//div[contains(@class, 'markerIconHolder')]");
+            var productCodes = productNodes.Select(x => x.GetAttributeValue("onclick", "").Split('(').Last().Split(')').First());
+            var productTaks = productCodes.Select(async x => await DownloadProductInfoByCode(x));
 
-        var products = (await Task.WhenAll(productTaks)).Select(x => new ExtendedProduct(x, spot)).ToList();
-        return (newPage, products);
+            var products = (await Task.WhenAll(productTaks)).Select(x => new ExtendedProduct(x, spot)).ToList();
+            return (newPage, products);
+        } catch {
+            return (null, null);
+        }
     }
 
     public async Task<Product> DownloadProductInfoByCode(string productcode) {
         var products = new List<Product>();
+        try
+        {
 
         using var handler = new HttpClientHandler();
         handler.AutomaticDecompression = ~DecompressionMethods.None;
@@ -138,7 +178,8 @@ public record GazetkiParser
                 foreach (var item in parsedData.items)
                 {
                     var product = new Product(
-                        id: item.id.ToString(),
+                        // id: item.id.ToString(),
+                        id: new Guid().ToString(),
                         name: item.name,
                         currentPrice: (decimal)(item.offer_price_flat ?? 0),
                         oldPrice: (decimal)(item.normal_price_flat ?? 0),
@@ -153,6 +194,9 @@ public record GazetkiParser
             }
 
         }
+
+        }
+        catch (Exception ex) { }
 
         return products?.Count > 0 ? products.First() : null;
     }
@@ -195,47 +239,54 @@ public record GazetkiParser
     {
         var products = new List<Product>();
 
-        using var handler = new HttpClientHandler();
-        handler.AutomaticDecompression = ~DecompressionMethods.None;
-
-        using var httpClient = new HttpClient(handler);
-        var request = new HttpRequestMessage(HttpMethod.Get, $"{url}offers/dynamic/{page}");
-
-        request.Headers.TryAddWithoutValidation("x-csrf", csrf);
-
-        var response = await httpClient.SendAsync(request);
-
-        if (response.IsSuccessStatusCode)
+        try
         {
-            string responseContent = await response.Content.ReadAsStringAsync();
+            using var handler = new HttpClientHandler();
+            handler.AutomaticDecompression = ~DecompressionMethods.None;
 
-            var parsedData = Newtonsoft.Json.JsonConvert.DeserializeObject<Root>(responseContent);
+            using var httpClient = new HttpClient(handler);
+            var request = new HttpRequestMessage(HttpMethod.Get, $"{url}offers/dynamic/{page}");
 
-            if (parsedData != null)
+            request.Headers.TryAddWithoutValidation("x-csrf", csrf);
+
+            var response = await httpClient.SendAsync(request);
+
+            if (response.IsSuccessStatusCode)
             {
-                // Convert the items to the Product type
-                foreach (var item in parsedData.items)
+                string responseContent = await response.Content.ReadAsStringAsync();
+
+                var parsedData = Newtonsoft.Json.JsonConvert.DeserializeObject<Root>(responseContent);
+
+                if (parsedData != null)
                 {
-                    var product = new Product(
-                        id: item.id.ToString(),
-                        name: item.name,
-                        currentPrice: (decimal)(item.offer_price_flat ?? 0),
-                        oldPrice: (decimal)(item.normal_price_flat ?? 0),
-                        brand: item.store?.is_brand == true ? item.store?.name : null,
-                        priceLabel: item.sub_title,
-                        saleSpecification: item.end_date_template,
-                        imageUrl: item.image_tn?.url
-                    );
+                    // Convert the items to the Product type
+                    foreach (var item in parsedData.items)
+                    {
+                        var product = new Product(
+                            //id: item.id.ToString(),
+                            id: new Guid().ToString(),
+                            name: item.name,
+                            currentPrice: (decimal)(item.offer_price_flat ?? 0),
+                            oldPrice: (decimal)(item.normal_price_flat ?? 0),
+                            brand: item.store?.is_brand == true ? item.store?.name : null,
+                            priceLabel: item.sub_title,
+                            saleSpecification: item.end_date_template,
+                            imageUrl: item.image_tn?.url
+                        );
 
-                    products.Add(product);
+                        products.Add(product);
+                    }
                 }
-            }
 
+            }
+            else
+            {
+                Console.WriteLine($"Request failed with status code: {response.StatusCode}");
+            }
         }
-        else
-        {
-            Console.WriteLine($"Request failed with status code: {response.StatusCode}");
-        }
+        catch (Exception ex) { Console.WriteLine(ex.Message); }
+
+        
 
         return products;
     }

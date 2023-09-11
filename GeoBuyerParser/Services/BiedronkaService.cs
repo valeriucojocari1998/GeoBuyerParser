@@ -19,7 +19,7 @@ public record BiedronkaService
         Repository = repository;
         Parser = parser;
     }
-    public async Task<List<ExtendedProduct>> GetProducts()
+    public async Task<int> GetProducts()
     {
         var spot = Repository.GetSpotByProvider(Spot);
         var categories = await GetCategories();
@@ -35,7 +35,7 @@ public record BiedronkaService
         var extendedProducts = productsLists.SelectMany(pr => pr).ToList();
         Repository.InsertCategories(extendedCategories);
         Repository.InsertProducts(extendedProducts);
-        return extendedProducts;
+        return extendedProducts?.Count ?? 0;
     }
 
     public async Task<List<Category>> GetCategories()

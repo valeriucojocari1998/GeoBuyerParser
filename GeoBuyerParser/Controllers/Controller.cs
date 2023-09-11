@@ -30,7 +30,14 @@ public class ApiController : ControllerBase
         var lProducts = await _lidlService.GetProducts();
         var sProducts = await _sparService.GetProducts();
         var gProducts = await _gazetkiService.GetProducts();
-        var products = bProducts.Concat(gProducts).Concat(kProducts).Concat(lProducts).Concat(sProducts).ToList();
+        var products = bProducts + gProducts + kProducts + lProducts + sProducts;
+        return Ok(products);
+    }
+
+    [HttpGet("api/ParseProductsGazetki")]
+    public async Task<IActionResult> ParseProductsGazetki()
+    {
+        var products = await _gazetkiService.GetProducts();
         return Ok(products);
     }
 

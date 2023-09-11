@@ -19,7 +19,6 @@ public class Program
             var configSpots = RepositoryConfig.Spots;
             var missing = configSpots.Except(spots).ToList();
             repository.InsertSpots(missing);
-            await GazetkiService.GetCSRF();
             await host.RunAsync();
         }
     }
