@@ -179,7 +179,7 @@ public record GazetkiParser
                 {
                     var product = new Product(
                         // id: item.id.ToString(),
-                        id: new Guid().ToString(),
+                        id: Guid.NewGuid().ToString(),
                         name: item.name,
                         currentPrice: (decimal)(item.offer_price_flat ?? 0),
                         oldPrice: (decimal)(item.normal_price_flat ?? 0),
@@ -264,7 +264,7 @@ public record GazetkiParser
                     {
                         var product = new Product(
                             //id: item.id.ToString(),
-                            id: new Guid().ToString(),
+                            id: Guid.NewGuid().ToString(),
                             name: item.name,
                             currentPrice: (decimal)(item.offer_price_flat ?? 0),
                             oldPrice: (decimal)(item.normal_price_flat ?? 0),

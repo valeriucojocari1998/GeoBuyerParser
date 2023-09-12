@@ -54,7 +54,7 @@ public record GazetkiService
             // all data
             var data = await GetProductsInternal(csfr);
             data.products.ForEach(x => products.Add(x.id, x));
-            spots.AddRange(spots);
+            spots.AddRange(data.spots);
             // by newsppaers
             var newsPapersData = await GetNewspapaersInternal(data.spots);
             newspapers.AddRange(newsPapersData.newspapers);
@@ -158,9 +158,11 @@ public record GazetkiService
 
     public async Task<(List<ExtendedProduct> products, List<Spot> spots)> GetProductsInternal(string csfr)
     {
+        var spots = new List<Spot>();
+        var products = new List<ExtendedProduct>();
         try
         {
-            var spots = await GetSpotsInternal();
+            spots.AddRange(await GetSpotsInternal());
 
             var tasks = spots.Select(async x =>
             {
@@ -182,14 +184,15 @@ public record GazetkiService
             });
 
             var productLists = await Task.WhenAll(tasks);
-            var products = productLists.SelectMany(list => list).ToList();
+            var newProducts = productLists.SelectMany(list => list).ToList();
+            products.AddRange(newProducts);
             return (products, spots);
         }
         catch (Exception ex)
         {
             // Handle any other exceptions here.
             Console.WriteLine("Error in GetProductsInternal: " + ex.Message);
-            return (new List<ExtendedProduct>(), new List<Spot>()); // Return empty lists or handle the error as needed.
+            return (products, spots); // Return empty lists or handle the error as needed.
         }
     }
 }
