@@ -26,7 +26,7 @@ public class Startup
     {
         services.AddDbContext<AppDbContext>(options =>
         {
-            options.UseSqlite($"Data Source={_env.ContentRootPath}/app.db");
+            options.UseSqlite($"Data Source={_env.ContentRootPath}/db/app.db");
         }, ServiceLifetime.Singleton);
 
         services.AddSingleton<BiedronkaParser>();
