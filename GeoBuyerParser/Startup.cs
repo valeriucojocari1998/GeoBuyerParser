@@ -24,9 +24,10 @@ public class Startup
 
     public void ConfigureServices(IServiceCollection services)
     {
+        Directory.CreateDirectory($"{_env.ContentRootPath}/db_file/");
         services.AddDbContext<AppDbContext>(options =>
         {
-            options.UseSqlite($"Data Source={_env.ContentRootPath}/db/app.db");
+            options.UseSqlite($"Data Source={_env.ContentRootPath}/db_file/app.db");
         }, ServiceLifetime.Singleton);
 
         services.AddSingleton<BiedronkaParser>();
