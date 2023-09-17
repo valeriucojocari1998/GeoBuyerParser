@@ -84,10 +84,10 @@ public record GazetkiParser
                     {
                         url = urlNode.Attributes["href"].Value;
                         newspaperCode = url.Split('-').Last();
-                        var imageNode = urlNode.SelectSingleNode(".//img[contains(@class, 'v-lazy-image-loaded')]");
-                        if (imageNode != null)
-                            imageUrl = imageNode?.Attributes["src"].Value;
                     }
+                    var imageNode = node.SelectSingleNode(".//img");
+                    if (imageNode != null)
+                        imageUrl = imageNode?.Attributes["src"].Value;
                     if (infoNode != null)
                     {
                         var nameNode = infoNode.SelectSingleNode(".//h3");
@@ -126,7 +126,7 @@ public record GazetkiParser
     {
         HtmlDocument document = new HtmlDocument();
         document.LoadHtml(html);
-        var newsPaperNodes = document.DocumentNode.SelectNodes("//div[contains(@class, 'zoomer')]");
+        var newsPaperNodes = document.DocumentNode.SelectNodes("//div[@class='zoomer']");
         if (newsPaperNodes == null)
             return 0;
         return newsPaperNodes.Count;
