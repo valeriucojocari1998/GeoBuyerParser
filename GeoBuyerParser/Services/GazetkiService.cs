@@ -1,4 +1,5 @@
-﻿using GeoBuyerParser.Managers;
+﻿using GeoBuyerParser.Helpers;
+using GeoBuyerParser.Managers;
 using GeoBuyerParser.Models;
 using GeoBuyerParser.Parsers;
 using GeoBuyerParser.Repositories;
@@ -99,8 +100,9 @@ public record GazetkiService
 
             var newsPaperLists = await Task.WhenAll(tasks);
             var newspapers = newsPaperLists.SelectMany(list => list).ToList();
+            var newNespapers = newspapers.Where(x => x.imageUrl.Contains("thumbnailFixedWidth")).Select(x => x.ChangeImageUrl(ParserHelper.ModifyImageUrl(x.imageUrl))).ToList();
 
-            var pageTasks = newspapers.Select(async paper =>
+            var pageTasks = newNespapers.Select(async paper =>
             {
                 try
                 {
@@ -109,13 +111,18 @@ public record GazetkiService
                     var html = await HtmlSourceManager.DownloadHtmlSourceCode(BaseUrl + paper.url + "#page=1");
                     var pageCount = Parser.GetNewspaperPagesCount(html);
                     var spot = spots.First(x => x.id == paper.spotId);
-                    for (int i = 1; i <= pageCount; i++)
+                    for (int i = 1; i <= pageCount;i++)
+                    {
+                        var newPage = new NewspaperPage(new Guid().ToString(), i.ToString(), paper.id, BaseUrl + paper.url + $"#page={i}", ParserHelper.ChangeNumberInUrl(paper.imageUrl, i));
+                        newspaperPages.Add(newPage);
+                    }
+/*                    for (int i = 1; i <= pageCount; i++)
                     {
                         var newHtml = await HtmlSourceManager.DownloadHtmlSourceCode(BaseUrl + paper.url + "#page=" + i.ToString());
                         var (page, pageProducts) = await Parser.GetNewspaperPage(newHtml, i.ToString(), paper.id, BaseUrl + paper.url + "#page=" + i.ToString(), spot);
                         newspaperPages.Add(page);
                         products.AddRange(pageProducts);
-                    }
+                    }*/
                     return (pages: newspaperPages, products: products);
                 }
                 catch (Exception ex)
@@ -130,7 +137,7 @@ public record GazetkiService
             var newsPaperPages = newsPaperPagesLists.Select(list => list.pages).SelectMany(list => list).ToList();
             var products = newsPaperPagesLists.Select(list => list.products).SelectMany(list => list).ToList();
 
-            return (newspapers, newsPaperPages, products);
+            return (newNespapers, newsPaperPages, products);
         }
         catch (Exception ex)
         {
