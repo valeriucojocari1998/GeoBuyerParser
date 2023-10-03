@@ -45,12 +45,13 @@ public record ParserHelper
     {
         try
         {
-            originalUrl.Replace("thumbnailFixedWidth", "large");
+            originalUrl = originalUrl.Replace("thumbnailFixedWidth", "large");
             var urlList = originalUrl.Split('/');
             var lastPart = urlList.LastOrDefault();
             var newLast = lastPart?.Split('-').FirstOrDefault() + "-1-1.jpg";
-            urlList.SkipLast(1).ToList().Add(newLast);
-            var modifiedUrl = string.Join('/', urlList);
+            var newUrlList = urlList.SkipLast(1).ToList();
+            newUrlList.Add(newLast);
+            var modifiedUrl = string.Join('/', newUrlList);
 
             return modifiedUrl;
         }

@@ -110,6 +110,17 @@ public class Repository
         _dbContext.SaveChanges();
     }
 
+    public List<Newspaper> GetNewspapers()
+    {
+        return _dbContext.Newspapers.ToList();
+    }
+
+    public void RemoveNewsppaers()
+    {
+        var newspapers = _dbContext.Newspapers;
+        _dbContext.Newspapers.RemoveRange(newspapers);
+    }
+
     public void InserNewspapersPages(IEnumerable<NewspaperPage> pages)
     {
         _dbContext.NewspaperPages.AddRange(pages);

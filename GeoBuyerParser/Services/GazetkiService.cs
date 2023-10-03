@@ -77,6 +77,49 @@ public record GazetkiService
         }
     }
 
+    public async Task CleanNewspapersAddPages()
+    {
+        var spots = Repository.GetAllSpots();
+        var newspapers = Repository.GetNewspapers();
+        var newNespapers = newspapers.Where(x => x.imageUrl.Contains("thumbnailFixedWidth")).Select(x => x.ChangeImageUrl(ParserHelper.ModifyImageUrl(x.imageUrl))).ToList();
+        var pageTasks = newNespapers.Select(async paper =>
+        {
+            try
+            {
+                var newspaperPages = new List<NewspaperPage>();
+                var products = new List<ExtendedProduct>();
+                var html = await HtmlSourceManager.DownloadHtmlSourceCode(BaseUrl + paper.url + "#page=1");
+                var pageCount = Parser.GetNewspaperPagesCount(html);
+                var spot = spots.First(x => x.id == paper.spotId);
+                for (int i = 1; i <= pageCount; i++)
+                {
+                    var newPage = new NewspaperPage(new Guid().ToString(), i.ToString(), paper.id, BaseUrl + paper.url + $"#page={i}", ParserHelper.ChangeNumberInUrl(paper.imageUrl, i));
+                    newspaperPages.Add(newPage);
+                }
+                /*                    for (int i = 1; i <= pageCount; i++)
+                                    {
+                                        var newHtml = await HtmlSourceManager.DownloadHtmlSourceCode(BaseUrl + paper.url + "#page=" + i.ToString());
+                                        var (page, pageProducts) = await Parser.GetNewspaperPage(newHtml, i.ToString(), paper.id, BaseUrl + paper.url + "#page=" + i.ToString(), spot);
+                                        newspaperPages.Add(page);
+                                        products.AddRange(pageProducts);
+                                    }*/
+                return (pages: newspaperPages, products: products);
+            }
+            catch (Exception ex)
+            {
+                // Handle the exception for this specific task.
+                Console.WriteLine("Error in task: " + ex.Message);
+                return (pages: new List<NewspaperPage>(), products: new List<ExtendedProduct>());
+            }
+        });
+
+        var newsPaperPagesLists = await Task.WhenAll(pageTasks);
+        var newsPaperPages = newsPaperPagesLists.Select(list => list.pages).SelectMany(list => list).ToList();
+        Repository.RemoveNewsppaers();
+        Repository.InsertNewspapers(newNespapers);
+        Repository.InserNewspapersPages(newsPaperPages);
+    }
+
     public async Task<(List<Newspaper> newspapers, List<NewspaperPage> pages, List<ExtendedProduct> products)> GetNewspapaersInternal(List<Spot> spots)
     {
         try

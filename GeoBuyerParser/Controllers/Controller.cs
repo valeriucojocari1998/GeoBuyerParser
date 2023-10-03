@@ -41,6 +41,13 @@ public class ApiController : ControllerBase
         return Ok(products);
     }
 
+    [HttpGet("api/CleanNewspapers")]
+    public IActionResult CleanNewspapers()
+    {
+        _gazetkiService.CleanNewspapersAddPages();
+        return Ok();
+    }
+
     [HttpGet("api/GetProducts")]
     public IActionResult GetProducts()
     {
