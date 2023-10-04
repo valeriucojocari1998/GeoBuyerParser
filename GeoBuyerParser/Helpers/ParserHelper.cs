@@ -48,7 +48,7 @@ public record ParserHelper
             originalUrl = originalUrl.Replace("thumbnailFixedWidth", "large");
             var urlList = originalUrl.Split('/');
             var lastPart = urlList.LastOrDefault();
-            var newLast = lastPart?.Split('-').FirstOrDefault() + "-1-1.jpg";
+            var newLast = lastPart?.Split("340").FirstOrDefault() + "1-1.jpg";
             var newUrlList = urlList.SkipLast(1).ToList();
             newUrlList.Add(newLast);
             var modifiedUrl = string.Join('/', newUrlList);

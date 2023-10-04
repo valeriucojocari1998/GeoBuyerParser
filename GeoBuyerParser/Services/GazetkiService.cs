@@ -93,7 +93,7 @@ public record GazetkiService
                 var spot = spots.First(x => x.id == paper.spotId);
                 for (int i = 1; i <= pageCount; i++)
                 {
-                    var newPage = new NewspaperPage(new Guid().ToString(), i.ToString(), paper.id, BaseUrl + paper.url + $"#page={i}", ParserHelper.ChangeNumberInUrl(paper.imageUrl, i));
+                    var newPage = new NewspaperPage(Guid.NewGuid().ToString(), i.ToString(), paper.id, BaseUrl + paper.url + $"#page={i}", ParserHelper.ChangeNumberInUrl(paper.imageUrl, i));
                     newspaperPages.Add(newPage);
                 }
                 /*                    for (int i = 1; i <= pageCount; i++)
@@ -156,7 +156,7 @@ public record GazetkiService
                     var spot = spots.First(x => x.id == paper.spotId);
                     for (int i = 1; i <= pageCount;i++)
                     {
-                        var newPage = new NewspaperPage(new Guid().ToString(), i.ToString(), paper.id, BaseUrl + paper.url + $"#page={i}", ParserHelper.ChangeNumberInUrl(paper.imageUrl, i));
+                        var newPage = new NewspaperPage(Guid.NewGuid().ToString(), i.ToString(), paper.id, BaseUrl + paper.url + $"#page={i}", ParserHelper.ChangeNumberInUrl(paper.imageUrl, i));
                         newspaperPages.Add(newPage);
                     }
 /*                    for (int i = 1; i <= pageCount; i++)
