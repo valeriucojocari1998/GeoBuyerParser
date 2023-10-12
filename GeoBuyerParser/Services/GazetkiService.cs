@@ -4,6 +4,9 @@ using GeoBuyerParser.Models;
 using GeoBuyerParser.Parsers;
 using GeoBuyerParser.Repositories;
 using HtmlAgilityPack;
+using Newtonsoft.Json;
+using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace GeoBuyerParser.Services;
 
@@ -120,76 +123,59 @@ public record GazetkiService
         Repository.InserNewspapersPages(newsPaperPages);
     }
 
-    public async Task<(List<Newspaper> newspapers, List<NewspaperPage> pages, List<ExtendedProduct> products)> GetNewspapaersInternal(List<Spot> spots)
+    public (List<NewspaperPage> pages, List<Product> products) GetNewspapersAndProducts(string html, string newspaperId)
     {
-        try
+        List<NewspaperPage> pages = new List<NewspaperPage>();
+        List<Product> products = new List<Product>();
+
+        string patternPages = "let flyerPages = (.*?);";
+        Match matchPages = Regex.Match(html, patternPages);
+        if (matchPages.Success)
         {
-            var tasks = spots.Select(async spot =>
-            {
-                try
-                {
-                    var url = BaseUrl + spot.url;
-                    var html = await HtmlSourceManager.DownloadHtmlSourceCode(url);
-                    var spotNews = Parser.GetNewspapers(html, spot.id);
-                    return spotNews;
-                }
-                catch (Exception ex)
-                {
-                    // Handle the exception for this specific task.
-                    Console.WriteLine("Error in task: " + ex.Message);
-                    return new List<Newspaper>(); // Return an empty list or handle the error as needed.
-                }
-            });
-
-            var newsPaperLists = await Task.WhenAll(tasks);
-            var newspapers = newsPaperLists.SelectMany(list => list).ToList();
-            var newNespapers = newspapers.Where(x => x.imageUrl.Contains("thumbnailFixedWidth")).Select(x => x.ChangeImageUrl(ParserHelper.ModifyImageUrl(x.imageUrl))).ToList();
-
-            var pageTasks = newNespapers.Select(async paper =>
-            {
-                try
-                {
-                    var newspaperPages = new List<NewspaperPage>();
-                    var products = new List<ExtendedProduct>();
-                    var html = await HtmlSourceManager.DownloadHtmlSourceCode(BaseUrl + paper.url + "#page=1");
-                    var pageCount = Parser.GetNewspaperPagesCount(html);
-                    var spot = spots.First(x => x.id == paper.spotId);
-                    for (int i = 1; i <= pageCount;i++)
-                    {
-                        var newPage = new NewspaperPage(Guid.NewGuid().ToString(), i.ToString(), paper.id, BaseUrl + paper.url + $"#page={i}", ParserHelper.ChangeNumberInUrl(paper.imageUrl, i));
-                        newspaperPages.Add(newPage);
-                    }
-/*                    for (int i = 1; i <= pageCount; i++)
-                    {
-                        var newHtml = await HtmlSourceManager.DownloadHtmlSourceCode(BaseUrl + paper.url + "#page=" + i.ToString());
-                        var (page, pageProducts) = await Parser.GetNewspaperPage(newHtml, i.ToString(), paper.id, BaseUrl + paper.url + "#page=" + i.ToString(), spot);
-                        newspaperPages.Add(page);
-                        products.AddRange(pageProducts);
-                    }*/
-                    return (pages: newspaperPages, products: products);
-                }
-                catch (Exception ex)
-                {
-                    // Handle the exception for this specific task.
-                    Console.WriteLine("Error in task: " + ex.Message);
-                    return (pages: new List<NewspaperPage>(), products: new List<ExtendedProduct>());
-                }
-            });
-
-            var newsPaperPagesLists = await Task.WhenAll(pageTasks);
-            var newsPaperPages = newsPaperPagesLists.Select(list => list.pages).SelectMany(list => list).ToList();
-            var products = newsPaperPagesLists.Select(list => list.products).SelectMany(list => list).ToList();
-
-            return (newNespapers, newsPaperPages, products);
+            var value = matchPages.Groups[1].Value;
+            List<string> flyerPages = JsonConvert.DeserializeObject<List<string>>(value);
+            var localPages = flyerPages.Select(x => "https://img.offers-cdn.net" + x.Replace("%s", "large"))
+                .Select((x, index) => new NewspaperPage(Guid.NewGuid().ToString(), index.ToString(), newspaperId, x, x));
+            pages.AddRange(localPages);
         }
-        catch (Exception ex)
+
+        // Add mappings for products
+        string patternProducts = "let hotspots = (.*?);";
+        Match matchProducts = Regex.Match(html, patternProducts);
+        if (matchProducts.Success)
         {
-            // Handle any other exceptions here.
-            Console.WriteLine("Error in GetNewspapaersInternal: " + ex.Message);
-            return (new List<Newspaper>(), new List<NewspaperPage>(), new List<ExtendedProduct>()); // Return empty lists or handle the error as needed.
+            var productsValue = matchProducts.Groups[1].Value;
+            Dictionary<string, Dictionary<string, Item>> productDictionary =
+                JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, Item>>>(productsValue);
+
+            foreach (var entry in productDictionary)
+            {
+                foreach (var item in entry.Value)
+                {
+                    Product product = new Product()
+                    
+                        // Map properties from item to product
+                        Name = item.Value.name,
+                        CurrentPrice = !string.IsNullOrEmpty(item.Value.offer_price)
+                            ? decimal.Parse(item.Value.offer_price, CultureInfo.InvariantCulture)
+                            : decimal.Parse(item.Value.normal_price, CultureInfo.InvariantCulture),
+                        OldPrice = !string.IsNullOrEmpty(item.Value.offer_price)
+                            ? decimal.Parse(item.Value.normal_price, CultureInfo.InvariantCulture)
+                            : (decimal?)null,
+                        Brand = item.Value.store,
+                        PriceLabel = item.Value.label,
+                        SaleSpecification = item.Value.description,
+                        ImageUrl = "https://img.offers-cdn.net" + item.Value.image.Replace("%s", "large"),
+                        // Add other mappings as needed
+                    )
+
+                    products.Add(product);
+                }
+            }
         }
+
+        return (pages, products);
     }
-
 
     public async Task<List<Spot>> GetSpotsInternal()
     {
@@ -245,4 +231,40 @@ public record GazetkiService
             return (products, spots); // Return empty lists or handle the error as needed.
         }
     }
+}
+
+public class Item
+{
+    public double x { get; set; }
+    public double y { get; set; }
+    public double width { get; set; }
+    public double height { get; set; }
+    public string link { get; set; }
+    public int added { get; set; }
+    public int added_mobile { get; set; }
+    public string name { get; set; }
+    public string store { get; set; }
+    public string store_slug { get; set; }
+    public int store_id { get; set; }
+    public string offer_price { get; set; }
+    public string normal_price { get; set; }
+    public string currency_code { get; set; }
+    public ValidFrom valid_from { get; set; }
+    public string description { get; set; }
+    public string label { get; set; }
+    public int id { get; set; }
+    public string slug { get; set; }
+    public string start_date { get; set; }
+    public string end_date { get; set; }
+    public string state { get; set; }
+    public string offer_url { get; set; }
+    public bool open_direct_link { get; set; }
+    public string image { get; set; }
+}
+
+public class ValidFrom
+{
+    public string date { get; set; }
+    public int timezone_type { get; set; }
+    public string timezone { get; set; }
 }

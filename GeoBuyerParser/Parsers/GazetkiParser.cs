@@ -1,7 +1,11 @@
 ﻿using GeoBuyerParser.Helpers;
 using GeoBuyerParser.Models;
 using HtmlAgilityPack;
+using Microsoft.Extensions.FileSystemGlobbing.Internal;
+using Newtonsoft.Json;
+using System.Linq;
 using System.Net;
+using System.Text.RegularExpressions;
 
 namespace GeoBuyerParser.Parsers;
 
@@ -126,6 +130,26 @@ public record GazetkiParser
     {
         HtmlDocument document = new HtmlDocument();
         document.LoadHtml(html);
+        var newsPaperNodes = document.DocumentNode.SelectNodes("//div[@class='zoomer']");
+        if (newsPaperNodes == null)
+            return 0;
+        return newsPaperNodes.Count;
+    }
+
+    public (List<NewspaperPage> pages, List<Product> products) GetNewspapersAndProducts(string html, string newspaperId)
+    {
+        List<NewspaperPage> pages = new List<NewspaperPage>();
+        string patternPages = "let flyerPages = (.*?);";
+        Match matchPages = Regex.Match(html, patternPages);
+        if (matchPages.Success)
+        {
+            var value = matchPages.Groups[1].Value;
+            List<string> flyerPages = JsonConvert.DeserializeObject<List<string>>(value);
+            var localPages = flyerPages.Select(x => "https://img.offers-cdn.net" + x.Replace("%s", "large"))
+                .Select((x, index) => new NewspaperPage(id: Guid.NewGuid().ToString(), index.ToString(), newspaperId, x, x));
+            pages.AddRange(localPages);
+        }
+        string patternProducts = "let hotspots = (.*?);";
         var newsPaperNodes = document.DocumentNode.SelectNodes("//div[@class='zoomer']");
         if (newsPaperNodes == null)
             return 0;

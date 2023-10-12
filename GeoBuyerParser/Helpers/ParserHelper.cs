@@ -62,22 +62,29 @@ public record ParserHelper
         }
     }
 
-    public static string ChangeNumberInUrl(string originalUrl, int newNumber)
+    public static string ChangeNumberInUrl(string originalUrl, int newFirstNumber)
     {
         try
         {
             UriBuilder uriBuilder = new UriBuilder(originalUrl);
             string path = uriBuilder.Path;
 
-            // Find and replace the number in the URL
+            // Find and replace the first part of the number in the URL (before the hyphen)
             int startIndex = path.LastIndexOf('-');
             int endIndex = path.LastIndexOf('.');
 
             if (startIndex != -1 && endIndex != -1)
             {
                 string currentNumber = path.Substring(startIndex + 1, endIndex - startIndex - 1);
-                string newNumberString = newNumber.ToString();
-                path = path.Replace(currentNumber, newNumberString);
+                string[] parts = currentNumber.Split('-');
+
+                if (parts.Length == 2)
+                {
+                    // Replace the first part with the new first number
+                    parts[0] = newFirstNumber.ToString();
+                    string newNumberString = string.Join("-", parts);
+                    path = path.Replace(currentNumber, newNumberString);
+                }
             }
 
             // Update the modified path in the URI
@@ -94,5 +101,4 @@ public record ParserHelper
             return originalUrl; // Return the original URL in case of an error
         }
     }
-
 }
