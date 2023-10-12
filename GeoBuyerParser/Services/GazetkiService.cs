@@ -152,22 +152,20 @@ public record GazetkiService
             {
                 foreach (var item in entry.Value)
                 {
-                    Product product = new Product()
-                    
-                        // Map properties from item to product
-                        Name = item.Value.name,
-                        CurrentPrice = !string.IsNullOrEmpty(item.Value.offer_price)
+                    Product product = new Product(
+                        id: Guid.NewGuid().ToString(),
+                        name: item.Value.name,
+                        currentPrice: !string.IsNullOrEmpty(item.Value.offer_price)
                             ? decimal.Parse(item.Value.offer_price, CultureInfo.InvariantCulture)
                             : decimal.Parse(item.Value.normal_price, CultureInfo.InvariantCulture),
-                        OldPrice = !string.IsNullOrEmpty(item.Value.offer_price)
+                        oldPrice: !string.IsNullOrEmpty(item.Value.offer_price)
                             ? decimal.Parse(item.Value.normal_price, CultureInfo.InvariantCulture)
                             : (decimal?)null,
-                        Brand = item.Value.store,
-                        PriceLabel = item.Value.label,
-                        SaleSpecification = item.Value.description,
-                        ImageUrl = "https://img.offers-cdn.net" + item.Value.image.Replace("%s", "large"),
-                        // Add other mappings as needed
-                    )
+                        brand: item.Value.store,
+                        priceLabel: item.Value.label,
+                        saleSpecification: item.Value.description,
+                        imageUrl: "https://img.offers-cdn.net" + item.Value.image.Replace("%s", "large"));
+                    // Add other mappings as needed
 
                     products.Add(product);
                 }
