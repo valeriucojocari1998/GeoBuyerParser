@@ -1,4 +1,6 @@
-﻿using GeoBuyerParser.Repositories;
+﻿using GeoBuyerParser.Managers;
+using GeoBuyerParser.Parsers;
+using GeoBuyerParser.Repositories;
 using GeoBuyerParser.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -74,5 +76,13 @@ public class ApiController : ControllerBase
     {
         var testSpots = RepositoryConfig.Spots;
         return Ok(testSpots);
+    }
+
+    [HttpGet("api/TestNewMethod")]
+    public async Task<IActionResult> TestNewMethod()
+    {
+        var html = await HtmlSourceManager.DownloadHtmlSourceCode("https://www.gazetki.pl/przejrzyj/oferty/biedronka-gazetka-1818137#page=1");
+        var xxxx = _gazetkiService.GetNewspapersAndProducts(html, RepositoryConfig.Spots.FirstOrDefault(), "123");
+        return Ok(xxxx);
     }
 }

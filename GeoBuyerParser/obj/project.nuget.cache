@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "M7cc29FCaXdKLzxltmZKd1HHJRKhQQtTrqDMGhyxZFSP8/oUHVNKXGCei1l418akIDI58bfR2uMOyaA2WtVKSQ==",
+  "dgSpecHash": "VaVptW1oKiLLbDqeQS9UjtAKjCZcQVX1sQrj9WjNgB3WX7AAcGL364OSUWXBPJVcNODrFm205NfipUXKikX6sw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Alvys-Dev\\Documents\\Valeriu-Projects\\GeoBuyerParser\\GeoBuyerParser\\GeoBuyerParser.csproj",
   "expectedPackageFiles": [
@@ -56,11 +56,7 @@
     "C:\\Users\\Alvys-Dev\\.nuget\\packages\\system.diagnostics.eventlog\\7.0.0\\system.diagnostics.eventlog.7.0.0.nupkg.sha512",
     "C:\\Users\\Alvys-Dev\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
     "C:\\Users\\Alvys-Dev\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
-    "C:\\Users\\Alvys-Dev\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
-    "C:\\Users\\Alvys-Dev\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.9\\microsoft.aspnetcore.app.ref.7.0.9.nupkg.sha512",
-    "C:\\Users\\Alvys-Dev\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.9\\microsoft.netcore.app.host.win-x64.7.0.9.nupkg.sha512",
-    "C:\\Users\\Alvys-Dev\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.9\\microsoft.netcore.app.ref.7.0.9.nupkg.sha512",
-    "C:\\Users\\Alvys-Dev\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.9\\microsoft.windowsdesktop.app.ref.7.0.9.nupkg.sha512"
+    "C:\\Users\\Alvys-Dev\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512"
   ],
   "logs": []
 }

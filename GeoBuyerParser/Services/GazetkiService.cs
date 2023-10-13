@@ -5,6 +5,8 @@ using GeoBuyerParser.Parsers;
 using GeoBuyerParser.Repositories;
 using HtmlAgilityPack;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Diagnostics;
 using System.Globalization;
 using System.Text.RegularExpressions;
 
@@ -80,6 +82,63 @@ public record GazetkiService
         }
     }
 
+    public async Task<(List<Newspaper> newspapers, List<NewspaperPage> pages, List<ExtendedProduct> products)> GetNewspapaersInternal(List<Spot> spots)
+    {
+        try
+        {
+            var tasks = spots.Select(async spot =>
+            {
+                try
+                {
+                    var url = BaseUrl + spot.url;
+                    var html = await HtmlSourceManager.DownloadHtmlSourceCode(url);
+                    var spotNews = Parser.GetNewspapers(html, spot.id);
+                    return spotNews;
+                }
+                catch (Exception ex)
+                {
+                    // Handle the exception for this specific task.
+                    Console.WriteLine("Error in task: " + ex.Message);
+                    return new List<Newspaper>(); // Return an empty list or handle the error as needed.
+                }
+            });
+
+            var newsPaperLists = await Task.WhenAll(tasks);
+            var newspapers = newsPaperLists.SelectMany(list => list).ToList();
+            var newNespapers = newspapers.Where(x => x.imageUrl.Contains("thumbnailFixedWidth")).Select(x => x.ChangeImageUrl(ParserHelper.ModifyImageUrl(x.imageUrl))).ToList();
+
+            var pageTasks = newNespapers.Select(async paper =>
+            {
+                try
+                {
+                    var spot = spots.First(x => x.id == paper.spotId);
+                    var html = await HtmlSourceManager.DownloadHtmlSourceCode(BaseUrl + paper.url + "#page=1");
+                    var (newPages, newProducts) = GetNewspapersAndProducts(html, spot, paper.id);
+                    var newnewProducts = newProducts.Select(x => new ExtendedProduct(x, spot));
+                    return (pages: newPages, products: newnewProducts);
+                }
+                catch (Exception ex)
+                {
+                    // Handle the exception for this specific task.
+                    Console.WriteLine("Error in task: " + ex.Message);
+                    return (pages: new List<NewspaperPage>(), products: new List<ExtendedProduct>());
+                }
+            });
+
+            var newsPaperPagesLists = await Task.WhenAll(pageTasks);
+            var newsPaperPages = newsPaperPagesLists.Select(list => list.pages).SelectMany(list => list).ToList();
+            var products = newsPaperPagesLists.Select(list => list.products).SelectMany(list => list).ToList();
+
+            return (newNespapers, newsPaperPages, products);
+        }
+        catch (Exception ex)
+        {
+            // Handle any other exceptions here.
+            Console.WriteLine("Error in GetNewspapaersInternal: " + ex.Message);
+            return (new List<Newspaper>(), new List<NewspaperPage>(), new List<ExtendedProduct>()); // Return empty lists or handle the error as needed.
+        }
+    }
+
     public async Task CleanNewspapersAddPages()
     {
         var spots = Repository.GetAllSpots();
@@ -96,7 +155,7 @@ public record GazetkiService
                 var spot = spots.First(x => x.id == paper.spotId);
                 for (int i = 1; i <= pageCount; i++)
                 {
-                    var newPage = new NewspaperPage(Guid.NewGuid().ToString(), i.ToString(), paper.id, BaseUrl + paper.url + $"#page={i}", ParserHelper.ChangeNumberInUrl(paper.imageUrl, i));
+                    var newPage = new NewspaperPage(Guid.NewGuid().ToString(), i.ToString(), paper.id, BaseUrl + paper.url + $"#page={i}", ParserHelper.ChangeNumberInUrl(paper.imageUrl, i), DateTimeOffset.UtcNow.ToString());
                     newspaperPages.Add(newPage);
                 }
                 /*                    for (int i = 1; i <= pageCount; i++)
@@ -123,54 +182,113 @@ public record GazetkiService
         Repository.InserNewspapersPages(newsPaperPages);
     }
 
-    public (List<NewspaperPage> pages, List<Product> products) GetNewspapersAndProducts(string html, string newspaperId)
+    public (List<NewspaperPage> pages, List<Product> products) GetNewspapersAndProducts(string html, Spot spot, string newspaperId)
     {
         List<NewspaperPage> pages = new List<NewspaperPage>();
         List<Product> products = new List<Product>();
 
-        string patternPages = "let flyerPages = (.*?);";
-        Match matchPages = Regex.Match(html, patternPages);
-        if (matchPages.Success)
+        try
         {
-            var value = matchPages.Groups[1].Value;
-            List<string> flyerPages = JsonConvert.DeserializeObject<List<string>>(value);
-            var localPages = flyerPages.Select(x => "https://img.offers-cdn.net" + x.Replace("%s", "large"))
-                .Select((x, index) => new NewspaperPage(Guid.NewGuid().ToString(), index.ToString(), newspaperId, x, x));
-            pages.AddRange(localPages);
-        }
-
-        // Add mappings for products
-        string patternProducts = "let hotspots = (.*?);";
-        Match matchProducts = Regex.Match(html, patternProducts);
-        if (matchProducts.Success)
-        {
-            var productsValue = matchProducts.Groups[1].Value;
-            Dictionary<string, Dictionary<string, Item>> productDictionary =
-                JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, Item>>>(productsValue);
-
-            foreach (var entry in productDictionary)
+            string patternPages = "let flyerPages = (.*?);";
+            Match matchPages = Regex.Match(html, patternPages);
+            if (matchPages.Success)
             {
-                foreach (var item in entry.Value)
-                {
-                    Product product = new Product(
-                        id: Guid.NewGuid().ToString(),
-                        name: item.Value.name,
-                        currentPrice: !string.IsNullOrEmpty(item.Value.offer_price)
-                            ? decimal.Parse(item.Value.offer_price, CultureInfo.InvariantCulture)
-                            : decimal.Parse(item.Value.normal_price, CultureInfo.InvariantCulture),
-                        oldPrice: !string.IsNullOrEmpty(item.Value.offer_price)
-                            ? decimal.Parse(item.Value.normal_price, CultureInfo.InvariantCulture)
-                            : (decimal?)null,
-                        brand: item.Value.store,
-                        priceLabel: item.Value.label,
-                        saleSpecification: item.Value.description,
-                        imageUrl: "https://img.offers-cdn.net" + item.Value.image.Replace("%s", "large"));
-                    // Add other mappings as needed
+                var value = matchPages.Groups[1].Value;
+                List<Page> flyerPages = JsonConvert.DeserializeObject<List<Page>>(value);
+                var localPages = flyerPages.Select(x => "https://img.offers-cdn.net" + x.page.Replace("%s", "large"))
+                    .Select((x, index) => new NewspaperPage(Guid.NewGuid().ToString(), index.ToString(), newspaperId, x, x, DateTimeOffset.UtcNow.ToString()));
+                pages.AddRange(localPages);
+            }
 
-                    products.Add(product);
+            // Add mappings for products
+            string patternProducts = "let hotspots = (.*?);";
+            Match matchProducts = Regex.Match(html, patternProducts);
+            if (matchProducts.Success)
+            {
+                var productsValue = matchProducts.Groups[1].Value;
+                var productObject = JsonConvert.DeserializeObject<JObject>(productsValue);
+                var index = -1;
+
+                foreach (var productEntry in productObject)
+                {
+                    index++;
+                    var pageId = pages.Count > index ? pages[index].id : null;
+                    if (productEntry.Value.Type == JTokenType.Array)
+                    {
+                        try
+                        {
+                            // Handle the array case as before
+                            var productsArray = productEntry.Value.ToObject<List<Item>>();
+                            foreach (var product in productsArray)
+                            {
+                                try
+                                {
+
+                                    // Create and add Product objects here
+                                    Product productRecord = new Product(
+                                        id: Guid.NewGuid().ToString(),
+                                        name: product.name,
+                                        currentPrice: !string.IsNullOrEmpty(product.offer_price)
+                                            ? decimal.TryParse(product.offer_price, CultureInfo.InvariantCulture, out var value1) ? value1 : 0
+                                            : decimal.TryParse(product.normal_price, CultureInfo.InvariantCulture, out var value2) ? value2 : 0,
+                                        oldPrice: !string.IsNullOrEmpty(product.offer_price)
+                                            ? decimal.TryParse(product.normal_price, CultureInfo.InvariantCulture, out var value3) ? value3 : 0
+                                            : (decimal?)null,
+                                        brand: product.store,
+                                        priceLabel: product.label,
+                                        saleSpecification: product.description,
+                                        imageUrl: "https://img.offers-cdn.net" + (product.image.Contains("%s") ? product.image.Replace("%s", "large") : product.image),
+                                        newspaperPageId: pageId
+                                    ); ;
+                                    products.Add(productRecord);
+                                }
+                                catch { }
+                            }
+                        }
+                        catch { }
+                    }
+                    else
+                    {
+                        try
+                        {
+                            var productObject2 = productEntry.Value.ToObject<Dictionary<string, Item>>();
+
+                            foreach (var productKey in productObject2?.Keys)
+                            {
+                                if (productObject2.TryGetValue(productKey, out var item))
+                                {
+                                    // Create and add Product objects here
+                                    Product productRecord = new Product(
+                                        id: Guid.NewGuid().ToString(),
+                                        name: item.name,
+                                        currentPrice: !string.IsNullOrEmpty(item.offer_price)
+                                            ? decimal.TryParse(item.offer_price, NumberStyles.Any, CultureInfo.InvariantCulture, out var value4) ? value4 : 0
+                                            : decimal.TryParse(item.normal_price, NumberStyles.Any, CultureInfo.InvariantCulture, out var value5) ? value5 : 0,
+                                        oldPrice: !string.IsNullOrEmpty(item.offer_price)
+                                            ? decimal.TryParse(item.normal_price, NumberStyles.Any, CultureInfo.InvariantCulture, out var value6) ? value6 : 0
+                                            : (decimal?)null,
+                                        brand: item.store,
+                                        priceLabel: item.label,
+                                        saleSpecification: item.description,
+                                        imageUrl: item.image != null
+                                            ? "https://img.offers-cdn.net" + (item.image.Contains("%s") ? item.image.Replace("%s", "large") : item.image)
+                                            : "",
+                                        newspaperPageId: pageId
+                                    );
+                                    products.Add(productRecord);
+                                }
+                            }
+                        }
+                        catch { }
+                    }
                 }
             }
+        } 
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
         }
+        
 
         return (pages, products);
     }
@@ -229,6 +347,11 @@ public record GazetkiService
             return (products, spots); // Return empty lists or handle the error as needed.
         }
     }
+}
+
+public class Page
+{
+    public string page;
 }
 
 public class Item

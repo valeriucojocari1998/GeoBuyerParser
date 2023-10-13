@@ -136,26 +136,6 @@ public record GazetkiParser
         return newsPaperNodes.Count;
     }
 
-    public (List<NewspaperPage> pages, List<Product> products) GetNewspapersAndProducts(string html, string newspaperId)
-    {
-        List<NewspaperPage> pages = new List<NewspaperPage>();
-        string patternPages = "let flyerPages = (.*?);";
-        Match matchPages = Regex.Match(html, patternPages);
-        if (matchPages.Success)
-        {
-            var value = matchPages.Groups[1].Value;
-            List<string> flyerPages = JsonConvert.DeserializeObject<List<string>>(value);
-            var localPages = flyerPages.Select(x => "https://img.offers-cdn.net" + x.Replace("%s", "large"))
-                .Select((x, index) => new NewspaperPage(id: Guid.NewGuid().ToString(), index.ToString(), newspaperId, x, x));
-            pages.AddRange(localPages);
-        }
-        string patternProducts = "let hotspots = (.*?);";
-        var newsPaperNodes = document.DocumentNode.SelectNodes("//div[@class='zoomer']");
-        if (newsPaperNodes == null)
-            return 0;
-        return newsPaperNodes.Count;
-    }
-
     public async Task<(NewspaperPage page, List<ExtendedProduct>? products)> GetNewspaperPage(string html, string pageNumber, string newspaperId, string url, Spot spot)
     {
         try
@@ -166,7 +146,7 @@ public record GazetkiParser
             if (newsPaperNode == null)
                 return (null, null);
             var imageNode = newsPaperNode.SelectSingleNode(".//img");
-            var newPage = new NewspaperPage(id: new Guid().ToString(), page: pageNumber, newspaperId: newspaperId, pageUrl: url, imageUrl: imageNode?.Attributes["src"].Value);
+            var newPage = new NewspaperPage(id: new Guid().ToString(), page: pageNumber, newspaperId: newspaperId, pageUrl: url, imageUrl: imageNode?.Attributes["src"].Value, dateCreated: DateTimeOffset.UtcNow.ToString());
             var productNodes = newsPaperNode.SelectNodes(".//div[contains(@class, 'markerIconHolder')]");
             var productCodes = productNodes.Select(x => x.GetAttributeValue("onclick", "").Split('(').Last().Split(')').First());
             var productTaks = productCodes.Select(async x => await DownloadProductInfoByCode(x));
