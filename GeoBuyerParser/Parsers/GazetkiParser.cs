@@ -275,7 +275,8 @@ public record GazetkiParser
                             brand: item.store?.is_brand == true ? item.store?.name : null,
                             priceLabel: item.sub_title,
                             saleSpecification: item.end_date_template,
-                            imageUrl: item.image_tn?.url
+                            imageUrl: item.image_tn?.url,
+                            productCode: item.id.ToString()
                         );
 
                         products.Add(product);

@@ -9,7 +9,8 @@ public record Product(
     string? priceLabel = null,
     string? saleSpecification = null,
     string? imageUrl = null,
-    string? newspaperPageId = null);
+    string? newspaperPageId = null,
+    string? productCode = null);
 
 public record ExtendedProduct(
     string id,
@@ -25,7 +26,8 @@ public record ExtendedProduct(
     string? priceLabel = null,
     string? saleSpecification = null,
     string? imageUrl = null,
-    string? newspaperPageId = null)
+    string? newspaperPageId = null,
+    string? productCode = null)
 {
     public ExtendedProduct(Product product, Spot market, Category? category = null)
         : this(
@@ -42,7 +44,8 @@ public record ExtendedProduct(
               categoryName: category?.name,
               marketId: market.id,
               marketProvider: market.provider,
-              newspaperPageId: product.newspaperPageId)
+              newspaperPageId: product.newspaperPageId,
+              productCode: product.productCode)
     { }
 }
 

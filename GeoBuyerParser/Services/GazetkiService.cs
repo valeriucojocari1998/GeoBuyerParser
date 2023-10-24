@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics;
 using System.Globalization;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace GeoBuyerParser.Services;
@@ -175,6 +176,7 @@ public record GazetkiService
             }
         });
 
+
         var newsPaperPagesLists = await Task.WhenAll(pageTasks);
         var newsPaperPages = newsPaperPagesLists.Select(list => list.pages).SelectMany(list => list).ToList();
         Repository.RemoveNewsppaers();
@@ -190,13 +192,23 @@ public record GazetkiService
         try
         {
             string patternPages = "let flyerPages = (.*?);";
+            string patternPagesIds = "let flyerPageIds = (.*?);";
             Match matchPages = Regex.Match(html, patternPages);
+            Match matchPagesIds = Regex.Match(html, patternPagesIds);
+
+            List<string> pagesIds = new List<string>();
+            if (matchPagesIds.Success)
+            {
+                List<string> newIds = JsonConvert.DeserializeObject<List<string>>(matchPagesIds.Groups[1].Value!)!;
+                pagesIds = newIds;
+            }
             if (matchPages.Success)
             {
                 var value = matchPages.Groups[1].Value;
                 List<Page> flyerPages = JsonConvert.DeserializeObject<List<Page>>(value);
+
                 var localPages = flyerPages.Select(x => "https://img.offers-cdn.net" + x.page.Replace("%s", "large"))
-                    .Select((x, index) => new NewspaperPage(Guid.NewGuid().ToString(), index.ToString(), newspaperId, x, x, DateTimeOffset.UtcNow.ToString()));
+                    .Select((x, index) => new NewspaperPage(Guid.NewGuid().ToString(), (index + 1).ToString(), newspaperId, x, x, DateTimeOffset.UtcNow.ToString(), newspaperCode: pagesIds.Count > index ? pagesIds[index] : null));
                 pages.AddRange(localPages);
             }
 
@@ -212,11 +224,11 @@ public record GazetkiService
                 foreach (var productEntry in productObject)
                 {
                     index++;
-                    var pageId = pages.Count > index ? pages[index].id : null;
                     if (productEntry.Value.Type == JTokenType.Array)
                     {
                         try
                         {
+                            var page = pages.FirstOrDefault( x => x.newspaperCode == productEntry.Key );
                             // Handle the array case as before
                             var productsArray = productEntry.Value.ToObject<List<Item>>();
                             foreach (var product in productsArray)
@@ -238,7 +250,8 @@ public record GazetkiService
                                         priceLabel: product.label,
                                         saleSpecification: product.description,
                                         imageUrl: "https://img.offers-cdn.net" + (product.image.Contains("%s") ? product.image.Replace("%s", "large") : product.image),
-                                        newspaperPageId: pageId
+                                        newspaperPageId: page?.id,
+                                        productCode: product.id.ToString()
                                     ); ;
                                     products.Add(productRecord);
                                 }
@@ -252,6 +265,7 @@ public record GazetkiService
                         try
                         {
                             var productObject2 = productEntry.Value.ToObject<Dictionary<string, Item>>();
+                            var page = pages.FirstOrDefault(x => x.newspaperCode == productEntry.Key);
 
                             foreach (var productKey in productObject2?.Keys)
                             {
@@ -273,7 +287,9 @@ public record GazetkiService
                                         imageUrl: item.image != null
                                             ? "https://img.offers-cdn.net" + (item.image.Contains("%s") ? item.image.Replace("%s", "large") : item.image)
                                             : "",
-                                        newspaperPageId: pageId
+                                        newspaperPageId: page?.id,
+                                        productCode: item.id.ToString()
+
                                     );
                                     products.Add(productRecord);
                                 }
