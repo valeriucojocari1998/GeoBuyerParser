@@ -1,5 +1,4 @@
 ﻿using GeoBuyerParser.Repositories;
-using GeoBuyerParser.Services;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;

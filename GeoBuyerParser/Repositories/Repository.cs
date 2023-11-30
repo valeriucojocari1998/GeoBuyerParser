@@ -127,4 +127,19 @@ public class Repository
         _dbContext.SaveChanges();
     }
 
+    public void CleanAllDbItems()
+    {
+        var stops = _dbContext.Spots;
+        _dbContext.Spots.RemoveRange(stops);
+        var categories = _dbContext.Categories;
+        _dbContext.Categories.RemoveRange(categories);
+        var products = _dbContext.Products;
+        _dbContext.Products.RemoveRange(products);
+        var newspapers = _dbContext.Newspapers;
+        _dbContext.Newspapers.RemoveRange(newspapers);
+        var pages = _dbContext.NewspaperPages;
+        _dbContext.NewspaperPages.RemoveRange(pages);
+        _dbContext.SaveChanges();
+    }
+
 }

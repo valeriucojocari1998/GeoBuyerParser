@@ -2,8 +2,8 @@
 
 public record Product(
     string id,
-    string name,
-    decimal currentPrice,
+    string? name,
+    decimal? currentPrice,
     decimal? oldPrice = null,
     string? brand = null,
     string? priceLabel = null,
@@ -14,11 +14,11 @@ public record Product(
 
 public record ExtendedProduct(
     string id,
-    string name,
-    DateTimeOffset dateCreated,
-    decimal currentPrice,
-    string marketId,
-    string marketProvider,
+    string? name,
+    DateTimeOffset? dateCreated,
+    decimal? currentPrice,
+    string? marketId,
+    string? marketProvider,
     string? categoryId = null,
     string? categoryName = null,
     decimal? oldPrice = null,

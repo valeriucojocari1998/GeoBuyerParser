@@ -1,5 +1,5 @@
 ﻿using GeoBuyerParser.Managers;
-using GeoBuyerParser.Parsers;
+using GeoBuyerParser.Models;
 using GeoBuyerParser.Repositories;
 using GeoBuyerParser.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -84,5 +84,14 @@ public class ApiController : ControllerBase
         var html = await HtmlSourceManager.DownloadHtmlSourceCode("https://www.gazetki.pl/przejrzyj/oferty/biedronka-gazetka-1818137#page=1");
         var xxxx = _gazetkiService.GetNewspapersAndProducts(html, RepositoryConfig.Spots.FirstOrDefault(), "123");
         return Ok(xxxx);
+    }
+
+    [HttpDelete("api/DeleteAllDbItems")]
+    public IActionResult DeleteAllDbItems()
+    {
+        _repository.CleanAllDbItems();
+        var configSpots = RepositoryConfig.Spots;
+        _repository.InsertSpots(configSpots);
+        return Ok();
     }
 }
