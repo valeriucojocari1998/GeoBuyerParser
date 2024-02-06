@@ -13,7 +13,9 @@
           "Microsoft.EntityFrameworkCore.Design": "7.0.9",
           "Microsoft.EntityFrameworkCore.Sqlite": "7.0.9",
           "Microsoft.Extensions.Hosting": "7.0.0",
-          "Newtonsoft.Json": "13.0.3"
+          "Newtonsoft.Json": "13.0.3",
+          "Selenium.Support": "4.17.0",
+          "Selenium.WebDriver": "4.17.0"
         },
         "runtime": {
           "GeoBuyerParser.dll": {}
@@ -372,6 +374,22 @@
           "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.2.22727"
+          }
+        }
+      },
+      "Selenium.Support/4.17.0": {
+        "dependencies": {
+          "Selenium.WebDriver": "4.17.0"
+        }
+      },
+      "Selenium.WebDriver/4.17.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/WebDriver.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
           }
         }
       },
@@ -859,6 +877,20 @@
       "sha512": "sha512-QYFyxhaABwmq3p/21VrZNYvCg3DaEoN/wUuw5nmfAf0X3HLjgupwhkEWdgfb9nvGAUIv3osmZoD3kKl4jxEmYQ==",
       "path": "newtonsoft.json.bson/1.0.2",
       "hashPath": "newtonsoft.json.bson.1.0.2.nupkg.sha512"
+    },
+    "Selenium.Support/4.17.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Ex4FJp8lD3Dsy6bJdey4wehDQrS7mYBln6oL82Ni4adWcfIz0fF7IUfyp8RK/7KkP4hzz2mu30AacvMltTdB7w==",
+      "path": "selenium.support/4.17.0",
+      "hashPath": "selenium.support.4.17.0.nupkg.sha512"
+    },
+    "Selenium.WebDriver/4.17.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wHwWPvQkgZv+k24pncPZswRdSF4AhF2bFVoF7MrY4Xw122j9L89TNGZUvdjdmscPk2XGpRK1fFQODOKopibQEw==",
+      "path": "selenium.webdriver/4.17.0",
+      "hashPath": "selenium.webdriver.4.17.0.nupkg.sha512"
     },
     "SQLitePCLRaw.bundle_e_sqlite3/2.1.4": {
       "type": "package",

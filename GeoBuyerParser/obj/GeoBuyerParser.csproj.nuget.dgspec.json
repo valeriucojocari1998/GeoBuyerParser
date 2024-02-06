@@ -1,32 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Alvys-Dev\\Documents\\Valeriu-Projects\\GeoBuyerParser\\GeoBuyerParser\\GeoBuyerParser.csproj": {}
+    "/Users/valeriucoj98/Documents/Projects/GeoBuyerParser/GeoBuyerParser/GeoBuyerParser.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Alvys-Dev\\Documents\\Valeriu-Projects\\GeoBuyerParser\\GeoBuyerParser\\GeoBuyerParser.csproj": {
+    "/Users/valeriucoj98/Documents/Projects/GeoBuyerParser/GeoBuyerParser/GeoBuyerParser.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Alvys-Dev\\Documents\\Valeriu-Projects\\GeoBuyerParser\\GeoBuyerParser\\GeoBuyerParser.csproj",
+        "projectUniqueName": "/Users/valeriucoj98/Documents/Projects/GeoBuyerParser/GeoBuyerParser/GeoBuyerParser.csproj",
         "projectName": "GeoBuyerParser",
-        "projectPath": "C:\\Users\\Alvys-Dev\\Documents\\Valeriu-Projects\\GeoBuyerParser\\GeoBuyerParser\\GeoBuyerParser.csproj",
-        "packagesPath": "C:\\Users\\Alvys-Dev\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Alvys-Dev\\Documents\\Valeriu-Projects\\GeoBuyerParser\\GeoBuyerParser\\obj\\",
+        "projectPath": "/Users/valeriucoj98/Documents/Projects/GeoBuyerParser/GeoBuyerParser/GeoBuyerParser.csproj",
+        "packagesPath": "/Users/valeriucoj98/.nuget/packages/",
+        "outputPath": "/Users/valeriucoj98/Documents/Projects/GeoBuyerParser/GeoBuyerParser/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Alvys-Dev\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/valeriucoj98/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -70,6 +63,14 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
+            },
+            "Selenium.Support": {
+              "target": "Package",
+              "version": "[4.17.0, )"
+            },
+            "Selenium.WebDriver": {
+              "target": "Package",
+              "version": "[4.17.0, )"
             }
           },
           "imports": [
@@ -88,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.302/RuntimeIdentifierGraph.json"
         }
       }
     }

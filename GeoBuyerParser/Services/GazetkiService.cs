@@ -34,7 +34,7 @@ public record GazetkiService
     public async Task<string> GetCSRF()
     {
 
-        var html = await HtmlSourceManager.DownloadHtmlSourceCode(BaseUrl);
+        var html = HtmlSourceManager.DownloadHtmlWithSelenium(BaseUrl);
         HtmlDocument doc = new HtmlDocument();
         doc.LoadHtml(html);
 
@@ -92,7 +92,7 @@ public record GazetkiService
                 try
                 {
                     var url = BaseUrl + spot.url;
-                    var html = await HtmlSourceManager.DownloadHtmlSourceCode(url);
+                    var html = HtmlSourceManager.DownloadHtmlWithSelenium(url);
                     var spotNews = Parser.GetNewspapers(html, spot.id);
                     return spotNews;
                 }
@@ -113,7 +113,7 @@ public record GazetkiService
                 try
                 {
                     var spot = spots.First(x => x.id == paper.spotId);
-                    var html = await HtmlSourceManager.DownloadHtmlSourceCode(BaseUrl + paper.url + "#page=1");
+                    var html = HtmlSourceManager.DownloadHtmlWithSelenium(BaseUrl + paper.url + "#page=1");
                     var (newPages, newProducts) = GetNewspapersAndProducts(html, spot, paper.id);
                     var newnewProducts = newProducts.Select(x => new ExtendedProduct(x, spot));
                     return (pages: newPages, products: newnewProducts);
@@ -309,11 +309,11 @@ public record GazetkiService
         return (pages, products);
     }
 
-    public async Task<List<Spot>> GetSpotsInternal()
+    public List<Spot> GetSpotsInternal()
     {
         try
         {
-            var htmls = await Task.WhenAll(ShopsQualifiers.Select(x => ShopsUrl + x).ToList().Select(async x => await HtmlSourceManager.DownloadHtmlSourceCode(x)));
+            var htmls = ShopsQualifiers.Select(x => ShopsUrl + x).ToList().Select(x => HtmlSourceManager.DownloadHtmlWithSelenium(x));
             return htmls.Select(x => Parser.GetSpots(x)).SelectMany(s => s).ToList();
         }
         catch (Exception ex)
@@ -330,14 +330,14 @@ public record GazetkiService
         var products = new List<ExtendedProduct>();
         try
         {
-            spots.AddRange(await GetSpotsInternal());
+            spots.AddRange(GetSpotsInternal());
 
             var tasks = spots.Select(async x =>
             {
                 try
                 {
                     var link = BaseUrl + x.url!;
-                    var html = await HtmlSourceManager.DownloadHtmlSourceCode(link);
+                    var html = HtmlSourceManager.DownloadHtmlWithSelenium(link);
                     var total = Parser.GetProductCount(html);
                     var newUrl = link.Substring(0, link.Length - 7).Replace("sklepy", "stores");
                     var newProducts = await Parser.GetProducts(newUrl, total, csfr);

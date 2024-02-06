@@ -1,5 +1,8 @@
 ﻿
 
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+
 namespace GeoBuyerParser.Managers;
 
 public static class HtmlSourceManager
@@ -18,6 +21,19 @@ public static class HtmlSourceManager
         {
             return string.Empty;
         }
+    }
+
+    public static string DownloadHtmlWithSelenium(string url)
+    {
+        IWebDriver driver = new ChromeDriver();
+
+        driver.Navigate().GoToUrl("https://bstackdemo.com/");
+
+        Thread.Sleep(TimeSpan.FromSeconds(3));
+        var html = driver.PageSource;
+        driver.Quit();
+
+        return html ?? "";
     }
 }
     
