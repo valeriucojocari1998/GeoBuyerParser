@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+   geobuyer_parser_poland:
+    image: itcode/parser_poland_geobuyer:latest
+    container_name: geobuyer_parser_poland
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./parser_poland_geobuyer:/app/db_file/
+    networks:
+      - geobuyer
+
+networks:
+  appnetwork:
+    driver: bridge

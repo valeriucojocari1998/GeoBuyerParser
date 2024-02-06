@@ -15,7 +15,7 @@ FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS runtime
 WORKDIR /app
 COPY --from=build /app/out ./
 
-# Install Chrome and ChromeDriver
+# Install Chrome and ChromeDriver dependencies
 RUN apt-get update && apt-get install -y \
     wget \
     unzip \
@@ -29,6 +29,7 @@ RUN apt-get update && apt-get install -y \
     libxcb1 \
     libxi6
 
+# Download and install Chrome
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
     && echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list \
     && apt-get update && apt-get install -y google-chrome-stable
@@ -43,4 +44,4 @@ RUN CHROME_DRIVER_VERSION=`curl -sS https://chromedriver.storage.googleapis.com/
 EXPOSE 8081
 
 # Specify the entry point to run your application
-ENTRYPOINT ["dotnet", "GeoBuyerParser.dll"]
+CMD ["dotnet", "GeoBuyerParser.dll"]

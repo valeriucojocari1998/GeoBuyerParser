@@ -15,4 +15,4 @@ services:
 
 networks:
   appnetwork:
-    driver: nat
+    #driver: nat

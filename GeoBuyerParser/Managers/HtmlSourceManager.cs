@@ -25,15 +25,22 @@ public static class HtmlSourceManager
 
     public static string DownloadHtmlWithSelenium(string url)
     {
-        IWebDriver driver = new ChromeDriver();
+        var options = new ChromeOptions();
+        options.AddArguments("--headless"); // Run Chrome in headless mode.
+        options.AddArguments("--no-sandbox"); // Bypass OS security model.
+        options.AddArguments("--disable-dev-shm-usage"); // Overcome limited resource problems.
+        options.AddArguments("--disable-gpu"); // Applicable for Windows only to enable headless mode.
 
-        driver.Navigate().GoToUrl("https://bstackdemo.com/");
+        using (var driver = new ChromeDriver(options))
+        {
+            driver.Navigate().GoToUrl(url);
 
-        Thread.Sleep(TimeSpan.FromSeconds(3));
-        var html = driver.PageSource;
-        driver.Quit();
+            // Add a wait here if needed
+            Thread.Sleep(TimeSpan.FromSeconds(3));
 
-        return html ?? "";
+            var html = driver.PageSource;
+            return html ?? "";
+        }
     }
 }
     
