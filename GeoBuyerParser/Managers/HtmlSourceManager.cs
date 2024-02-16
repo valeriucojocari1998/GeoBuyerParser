@@ -1,7 +1,7 @@
 ﻿
 
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Edge;
 
 namespace GeoBuyerParser.Managers;
 
@@ -25,18 +25,15 @@ public static class HtmlSourceManager
 
     public static string DownloadHtmlWithSelenium(string url)
     {
-        var options = new ChromeOptions();
-        options.AddArguments("--headless"); // Run Chrome in headless mode.
-        options.AddArguments("--no-sandbox"); // Bypass OS security model.
-        options.AddArguments("--disable-dev-shm-usage"); // Overcome limited resource problems.
-        options.AddArguments("--disable-gpu"); // Applicable for Windows only to enable headless mode.
+        var options = new EdgeOptions();
+        options.AddArgument("--headless");
 
-        using (var driver = new ChromeDriver(options))
+        using (var driver = new EdgeDriver(options))
         {
             driver.Navigate().GoToUrl(url);
 
             // Add a wait here if needed
-            Thread.Sleep(TimeSpan.FromSeconds(3));
+            Thread.Sleep(TimeSpan.FromSeconds(2));
 
             var html = driver.PageSource;
             return html ?? "";
