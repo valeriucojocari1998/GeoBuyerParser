@@ -1,43 +1,54 @@
-﻿
+﻿using PuppeteerSharp;
 
-using OpenQA.Selenium;
-using OpenQA.Selenium.Edge;
-
-namespace GeoBuyerParser.Managers;
-
-public static class HtmlSourceManager
+namespace GeoBuyerParser.Managers
 {
-    public static async Task<string> DownloadHtmlSourceCode(string url)
+    public static class HtmlSourceManager
     {
-        using HttpClient client = new();
-        HttpResponseMessage response = await client.GetAsync(url);
-
-        if (response.IsSuccessStatusCode)
+        public static async Task<string> DownloadHtmlSourceCode(string url)
         {
-            string htmlSourceCode = await response.Content.ReadAsStringAsync();
-            return htmlSourceCode;
+            using HttpClient client = new();
+            HttpResponseMessage response = await client.GetAsync(url);
+
+            if (response.IsSuccessStatusCode)
+            {
+                string htmlSourceCode = await response.Content.ReadAsStringAsync();
+                return htmlSourceCode;
+            }
+            else
+            {
+                return string.Empty;
+            }
         }
-        else
+
+        public static async Task<string> DownloadHtmlWithPuppeteerSharp(string url)
         {
-            return string.Empty;
-        }
-    }
+            try
+            {
+                // Ensure PuppeteerSharp is initialized and browser revision is downloaded
+                await new BrowserFetcher().DownloadAsync();
 
-    public static string DownloadHtmlWithSelenium(string url)
-    {
-        var options = new EdgeOptions();
-        options.AddArgument("--headless");
+                Console.WriteLine($"Start {url}");
 
-        using (var driver = new EdgeDriver(options))
-        {
-            driver.Navigate().GoToUrl(url);
+                using (var browser = await Puppeteer.LaunchAsync(new LaunchOptions
+                {
+                    Headless = true
+                }))
+                using (var page = await browser.NewPageAsync())
+                {
+                    await page.GoToAsync(url);
+                    await page.WaitForTimeoutAsync(3000); // Adjust the timeout as needed
 
-            // Add a wait here if needed
-            Thread.Sleep(TimeSpan.FromSeconds(2));
+                    Console.WriteLine($"End {url}");
 
-            var html = driver.PageSource;
-            return html ?? "";
+                    var html = await page.GetContentAsync();
+                    return html ?? "";
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in DownloadHtmlWithPuppeteerSharp: {ex.Message}");
+                return string.Empty;
+            }
         }
     }
 }
-    

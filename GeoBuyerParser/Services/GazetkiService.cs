@@ -34,7 +34,7 @@ public record GazetkiService
     public async Task<string> GetCSRF()
     {
 
-        var html = HtmlSourceManager.DownloadHtmlWithSelenium(BaseUrl);
+        var html = await HtmlSourceManager.DownloadHtmlWithPuppeteerSharp(BaseUrl);
         HtmlDocument doc = new HtmlDocument();
         doc.LoadHtml(html);
 
@@ -44,7 +44,7 @@ public record GazetkiService
 
         string scriptContent = scriptNode.InnerHtml;
         string pattern = @"window\.csrf\s*=\s*""([^""]+)"";";
-        var match = System.Text.RegularExpressions.Regex.Match(scriptContent, pattern);
+        var match = Regex.Match(scriptContent, pattern);
         return match.Groups[1].Value;
     }
 
@@ -92,7 +92,7 @@ public record GazetkiService
                 try
                 {
                     var url = BaseUrl + spot.url;
-                    var html = HtmlSourceManager.DownloadHtmlWithSelenium(url);
+                    var html = await HtmlSourceManager.DownloadHtmlWithPuppeteerSharp(url);
                     var spotNews = Parser.GetNewspapers(html, spot.id);
                     return spotNews;
                 }
@@ -113,7 +113,7 @@ public record GazetkiService
                 try
                 {
                     var spot = spots.First(x => x.id == paper.spotId);
-                    var html = HtmlSourceManager.DownloadHtmlWithSelenium(BaseUrl + paper.url + "#page=1");
+                    var html = await HtmlSourceManager.DownloadHtmlWithPuppeteerSharp(BaseUrl + paper.url + "#page=1");
                     var (newPages, newProducts) = GetNewspapersAndProducts(html, spot, paper.id);
                     var newnewProducts = newProducts.Select(x => new ExtendedProduct(x, spot));
                     return (pages: newPages, products: newnewProducts);
@@ -309,20 +309,24 @@ public record GazetkiService
         return (pages, products);
     }
 
-    public List<Spot> GetSpotsInternal()
+    public async Task<List<Spot>> GetSpotsInternalAsync()
     {
         try
         {
-            var htmls = ShopsQualifiers.Select(x => ShopsUrl + x).ToList().Select(x => HtmlSourceManager.DownloadHtmlWithSelenium(x));
-            return htmls.Select(x => Parser.GetSpots(x)).SelectMany(s => s).ToList();
+            var htmlTasks = ShopsQualifiers.Select(async x => await HtmlSourceManager.DownloadHtmlWithPuppeteerSharp(ShopsUrl + x));
+            var htmlContents = await Task.WhenAll(htmlTasks);
+
+            var spotsList = htmlContents.Select(Parser.GetSpots).SelectMany(s => s).ToList();
+            return spotsList;
         }
         catch (Exception ex)
         {
             // Handle the exception here.
-            Console.WriteLine("Error in GetSpotsInternal: " + ex.Message);
+            Console.WriteLine("Error in GetSpotsInternalAsync: " + ex.Message);
             return new List<Spot>(); // Return an empty list or handle the error as needed.
         }
     }
+
 
     public async Task<(List<ExtendedProduct> products, List<Spot> spots)> GetProductsInternal(string csfr)
     {
@@ -330,14 +334,14 @@ public record GazetkiService
         var products = new List<ExtendedProduct>();
         try
         {
-            spots.AddRange(GetSpotsInternal());
+            spots.AddRange(await GetSpotsInternalAsync());
 
             var tasks = spots.Select(async x =>
             {
                 try
                 {
                     var link = BaseUrl + x.url!;
-                    var html = HtmlSourceManager.DownloadHtmlWithSelenium(link);
+                    var html = await HtmlSourceManager.DownloadHtmlWithPuppeteerSharp(link);
                     var total = Parser.GetProductCount(html);
                     var newUrl = link.Substring(0, link.Length - 7).Replace("sklepy", "stores");
                     var newProducts = await Parser.GetProducts(newUrl, total, csfr);

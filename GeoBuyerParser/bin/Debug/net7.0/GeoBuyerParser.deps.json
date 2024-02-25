@@ -14,8 +14,7 @@
           "Microsoft.EntityFrameworkCore.Sqlite": "7.0.9",
           "Microsoft.Extensions.Hosting": "7.0.0",
           "Newtonsoft.Json": "13.0.3",
-          "Selenium.Support": "4.17.0",
-          "Selenium.WebDriver": "4.17.0"
+          "PuppeteerSharp": "14.1.0"
         },
         "runtime": {
           "GeoBuyerParser.dll": {}
@@ -59,6 +58,14 @@
           "lib/net7.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll": {
             "assemblyVersion": "7.0.0.0",
             "fileVersion": "7.0.22.51819"
+          }
+        }
+      },
+      "Microsoft.Bcl.AsyncInterfaces/1.1.0": {
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "4.700.19.56404"
           }
         }
       },
@@ -377,19 +384,16 @@
           }
         }
       },
-      "Selenium.Support/4.17.0": {
+      "PuppeteerSharp/14.1.0": {
         "dependencies": {
-          "Selenium.WebDriver": "4.17.0"
-        }
-      },
-      "Selenium.WebDriver/4.17.0": {
-        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "1.1.0",
+          "Microsoft.Extensions.Logging": "7.0.0",
           "Newtonsoft.Json": "13.0.3"
         },
         "runtime": {
-          "lib/netstandard2.0/WebDriver.dll": {
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.0.0.0"
+          "lib/netstandard2.0/PuppeteerSharp.dll": {
+            "assemblyVersion": "14.1.0.0",
+            "fileVersion": "14.1.0.0"
           }
         }
       },
@@ -597,6 +601,13 @@
       "sha512": "sha512-IJOsB1cm6FYGXxhlNoWR6zZYFREEBzeFX76NlBGhrZ7+VMK4piLm3fAgUBliasyEUg5MOOqFz5EGv8nmU5rXWQ==",
       "path": "microsoft.aspnetcore.mvc.newtonsoftjson/7.0.0",
       "hashPath": "microsoft.aspnetcore.mvc.newtonsoftjson.7.0.0.nupkg.sha512"
+    },
+    "Microsoft.Bcl.AsyncInterfaces/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1Am6l4Vpn3/K32daEqZI+FFr96OlZkgwK2LcT3pZ2zWubR5zTPW3/FkO1Rat9kb7oQOa4rxgl9LJHc5tspCWfg==",
+      "path": "microsoft.bcl.asyncinterfaces/1.1.0",
+      "hashPath": "microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512"
     },
     "Microsoft.CSharp/4.7.0": {
       "type": "package",
@@ -878,19 +889,12 @@
       "path": "newtonsoft.json.bson/1.0.2",
       "hashPath": "newtonsoft.json.bson.1.0.2.nupkg.sha512"
     },
-    "Selenium.Support/4.17.0": {
+    "PuppeteerSharp/14.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Ex4FJp8lD3Dsy6bJdey4wehDQrS7mYBln6oL82Ni4adWcfIz0fF7IUfyp8RK/7KkP4hzz2mu30AacvMltTdB7w==",
-      "path": "selenium.support/4.17.0",
-      "hashPath": "selenium.support.4.17.0.nupkg.sha512"
-    },
-    "Selenium.WebDriver/4.17.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-wHwWPvQkgZv+k24pncPZswRdSF4AhF2bFVoF7MrY4Xw122j9L89TNGZUvdjdmscPk2XGpRK1fFQODOKopibQEw==",
-      "path": "selenium.webdriver/4.17.0",
-      "hashPath": "selenium.webdriver.4.17.0.nupkg.sha512"
+      "sha512": "sha512-kGQ5ekNOEeZeuWyp1jbOseL2wTI6BkMjgqlkTK/ubqErEXaq3N6ndZl6nHpJA5jtbAKyye77fDyG15dUsk4M7Q==",
+      "path": "puppeteersharp/14.1.0",
+      "hashPath": "puppeteersharp.14.1.0.nupkg.sha512"
     },
     "SQLitePCLRaw.bundle_e_sqlite3/2.1.4": {
       "type": "package",

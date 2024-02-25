@@ -66,6 +66,17 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "Microsoft.Bcl.AsyncInterfaces/1.1.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.CSharp/4.7.0": {
         "type": "package",
         "compile": {
@@ -842,39 +853,22 @@
           }
         }
       },
-      "Selenium.Support/4.17.0": {
+      "PuppeteerSharp/14.1.0": {
         "type": "package",
         "dependencies": {
-          "Selenium.WebDriver": "4.17.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/WebDriver.Support.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/WebDriver.Support.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Selenium.WebDriver/4.17.0": {
-        "type": "package",
-        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "1.1.0",
+          "Microsoft.Extensions.Logging": "2.0.2",
           "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
-          "lib/netstandard2.0/WebDriver.dll": {
+          "lib/netstandard2.0/PuppeteerSharp.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/WebDriver.dll": {
+          "lib/netstandard2.0/PuppeteerSharp.dll": {
             "related": ".xml"
           }
-        },
-        "build": {
-          "buildTransitive/Selenium.WebDriver.targets": {}
         }
       },
       "SQLitePCLRaw.bundle_e_sqlite3/2.1.4": {
@@ -1208,6 +1202,30 @@
         "lib/net7.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.xml",
         "microsoft.aspnetcore.mvc.newtonsoftjson.7.0.0.nupkg.sha512",
         "microsoft.aspnetcore.mvc.newtonsoftjson.nuspec"
+      ]
+    },
+    "Microsoft.Bcl.AsyncInterfaces/1.1.0": {
+      "sha512": "1Am6l4Vpn3/K32daEqZI+FFr96OlZkgwK2LcT3pZ2zWubR5zTPW3/FkO1Rat9kb7oQOa4rxgl9LJHc5tspCWfg==",
+      "type": "package",
+      "path": "microsoft.bcl.asyncinterfaces/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Bcl.AsyncInterfaces.dll",
+        "lib/net461/Microsoft.Bcl.AsyncInterfaces.xml",
+        "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll",
+        "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.xml",
+        "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll",
+        "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.xml",
+        "microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
+        "microsoft.bcl.asyncinterfaces.nuspec",
+        "ref/net461/Microsoft.Bcl.AsyncInterfaces.dll",
+        "ref/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll",
+        "ref/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "Microsoft.CSharp/4.7.0": {
@@ -2276,38 +2294,17 @@
         "newtonsoft.json.bson.nuspec"
       ]
     },
-    "Selenium.Support/4.17.0": {
-      "sha512": "Ex4FJp8lD3Dsy6bJdey4wehDQrS7mYBln6oL82Ni4adWcfIz0fF7IUfyp8RK/7KkP4hzz2mu30AacvMltTdB7w==",
+    "PuppeteerSharp/14.1.0": {
+      "sha512": "kGQ5ekNOEeZeuWyp1jbOseL2wTI6BkMjgqlkTK/ubqErEXaq3N6ndZl6nHpJA5jtbAKyye77fDyG15dUsk4M7Q==",
       "type": "package",
-      "path": "selenium.support/4.17.0",
+      "path": "puppeteersharp/14.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "icon.png",
-        "lib/netstandard2.0/WebDriver.Support.dll",
-        "lib/netstandard2.0/WebDriver.Support.xml",
-        "selenium.support.4.17.0.nupkg.sha512",
-        "selenium.support.nuspec"
-      ]
-    },
-    "Selenium.WebDriver/4.17.0": {
-      "sha512": "wHwWPvQkgZv+k24pncPZswRdSF4AhF2bFVoF7MrY4Xw122j9L89TNGZUvdjdmscPk2XGpRK1fFQODOKopibQEw==",
-      "type": "package",
-      "path": "selenium.webdriver/4.17.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "build/Selenium.WebDriver.targets",
-        "buildTransitive/Selenium.WebDriver.targets",
-        "icon.png",
-        "lib/netstandard2.0/WebDriver.dll",
-        "lib/netstandard2.0/WebDriver.xml",
-        "manager/linux/selenium-manager",
-        "manager/macos/selenium-manager",
-        "manager/windows/selenium-manager.exe",
-        "selenium.webdriver.4.17.0.nupkg.sha512",
-        "selenium.webdriver.nuspec"
+        "lib/netstandard2.0/PuppeteerSharp.dll",
+        "lib/netstandard2.0/PuppeteerSharp.xml",
+        "puppeteersharp.14.1.0.nupkg.sha512",
+        "puppeteersharp.nuspec"
       ]
     },
     "SQLitePCLRaw.bundle_e_sqlite3/2.1.4": {
@@ -2586,28 +2583,27 @@
       "Microsoft.EntityFrameworkCore.Sqlite >= 7.0.9",
       "Microsoft.Extensions.Hosting >= 7.0.0",
       "Newtonsoft.Json >= 13.0.3",
-      "Selenium.Support >= 4.17.0",
-      "Selenium.WebDriver >= 4.17.0"
+      "PuppeteerSharp >= 14.1.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Alvys-Dev\\.nuget\\packages\\": {},
+    "C:\\Users\\valer\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Alvys-Dev\\Documents\\Valeriu-Projects\\GeoBuyerParser\\GeoBuyerParser\\GeoBuyerParser.csproj",
+      "projectUniqueName": "C:\\Users\\valer\\Documents\\Work\\GeoBuyerParser\\GeoBuyerParser\\GeoBuyerParser.csproj",
       "projectName": "GeoBuyerParser",
-      "projectPath": "C:\\Users\\Alvys-Dev\\Documents\\Valeriu-Projects\\GeoBuyerParser\\GeoBuyerParser\\GeoBuyerParser.csproj",
-      "packagesPath": "C:\\Users\\Alvys-Dev\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Alvys-Dev\\Documents\\Valeriu-Projects\\GeoBuyerParser\\GeoBuyerParser\\obj\\",
+      "projectPath": "C:\\Users\\valer\\Documents\\Work\\GeoBuyerParser\\GeoBuyerParser\\GeoBuyerParser.csproj",
+      "packagesPath": "C:\\Users\\valer\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\valer\\Documents\\Work\\GeoBuyerParser\\GeoBuyerParser\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Alvys-Dev\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\valer\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2616,7 +2612,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2661,13 +2656,9 @@
             "target": "Package",
             "version": "[13.0.3, )"
           },
-          "Selenium.Support": {
+          "PuppeteerSharp": {
             "target": "Package",
-            "version": "[4.17.0, )"
-          },
-          "Selenium.WebDriver": {
-            "target": "Package",
-            "version": "[4.17.0, )"
+            "version": "[14.1.0, )"
           }
         },
         "imports": [
@@ -2686,7 +2677,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

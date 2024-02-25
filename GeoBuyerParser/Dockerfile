@@ -10,12 +10,12 @@ RUN dotnet restore
 COPY . ./
 RUN dotnet publish -c Release -o out
 
-# Build the runtime image using a suitable runtime image
+# Build the runtime image using the ASP.NET runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS runtime
 WORKDIR /app
 COPY --from=build /app/out ./
 
-# Install necessary dependencies for running Microsoft Edge WebDriver
+# Install necessary dependencies for running ChromeDriver and Chrome
 RUN apt-get update && apt-get install -y \
     wget \
     unzip \
@@ -33,13 +33,13 @@ RUN apt-get update && apt-get install -y \
     libgtk-3-0 \
     libgbm1
 
-# Download and install Microsoft Edge WebDriver
-RUN wget -q -O /tmp/msedgedriver.zip https://msedgedriver.azureedge.net/LATEST_RELEASE/msedgedriver_linux64.zip \
-    && unzip /tmp/msedgedriver.zip -d /usr/local/bin \
-    && rm /tmp/msedgedriver.zip
+# Download and install ChromeDriver
+RUN wget -q -O /tmp/chromedriver.zip https://chromedriver.storage.googleapis.com/103.0.5060.53/chromedriver_linux64.zip \
+    && unzip /tmp/chromedriver.zip -d /usr/local/bin \
+    && rm /tmp/chromedriver.zip
 
-# Expose the port that your ASP.NET Core application listens on (e.g., 80)
-EXPOSE 8081
+# Expose the ports that your ASP.NET Core application listens on (e.g., 8080 and 8081)
+EXPOSE 8080 8081
 
 # Specify the entry point to run your application
 CMD ["dotnet", "GeoBuyerParser.dll"]

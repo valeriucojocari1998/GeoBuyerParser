@@ -1,18 +1,15 @@
-version: '3.7'
+version: '3.8'
 
 services:
   webapp:
     build:
-      context: ../GeoBuyerParser
+      context: .
       dockerfile: Dockerfile
-    container_name: geo-buyer-parser
     ports:
+      - "8080:8080"
       - "8081:8081"
-    volumes:
-      - ./_db_file:/app/db_file/
-    networks:
-      - appnetwork
+    depends_on:
+      - puppeteer
 
-networks:
-  appnetwork:
-    #driver: nat
+  puppeteer:
+    image: mcr.microsoft.com/dotnet/sdk:7.0

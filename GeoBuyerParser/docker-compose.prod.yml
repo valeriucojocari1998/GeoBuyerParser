@@ -1,16 +1,23 @@
-version: '3.7'
+version: '3.8'
 
 services:
-   geobuyer_parser_poland:
-    image: itcode/parser_poland_geobuyer:latest
-    container_name: geobuyer_parser_poland
+  webapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
+      - "8080:8080"
       - "8081:8081"
-    volumes:
-      - ./parser_poland_geobuyer:/app/db_file/
     networks:
-      - geobuyer
+      - my_network
+    depends_on:
+      - puppeteer
+
+  puppeteer:
+    image: mcr.microsoft.com/dotnet/sdk:7.0
+    command: sh -c "apt-get update && apt-get install -y libgconf-2-4 libxi6 libglib2.0-0 libnss3 libatk1.0-0 libatk-bridge2.0-0 libgtk-3-0 libx11-xcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxss1 libxtst6 libgbm1 wget xvfb && dotnet GeoBuyerParser.dll"
+    networks:
+      - my_network
 
 networks:
-  appnetwork:
-    driver: bridge
+  my_network:
