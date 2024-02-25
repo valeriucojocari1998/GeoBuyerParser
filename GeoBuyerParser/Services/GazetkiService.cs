@@ -34,7 +34,7 @@ public record GazetkiService
     public async Task<string> GetCSRF()
     {
 
-        var html = await HtmlSourceManager.DownloadHtmlWithPuppeteerSharp(BaseUrl);
+        var html = await HtmlSourceManager.DownloadHtmlSourceCode(BaseUrl);
         HtmlDocument doc = new HtmlDocument();
         doc.LoadHtml(html);
 
@@ -92,7 +92,7 @@ public record GazetkiService
                 try
                 {
                     var url = BaseUrl + spot.url;
-                    var html = await HtmlSourceManager.DownloadHtmlWithPuppeteerSharp(url);
+                    var html = await HtmlSourceManager.DownloadHtmlSourceCode(url);
                     var spotNews = Parser.GetNewspapers(html, spot.id);
                     return spotNews;
                 }
@@ -113,7 +113,7 @@ public record GazetkiService
                 try
                 {
                     var spot = spots.First(x => x.id == paper.spotId);
-                    var html = await HtmlSourceManager.DownloadHtmlWithPuppeteerSharp(BaseUrl + paper.url + "#page=1");
+                    var html = await HtmlSourceManager.DownloadHtmlSourceCode(BaseUrl + paper.url + "#page=1");
                     var (newPages, newProducts) = GetNewspapersAndProducts(html, spot, paper.id);
                     var newnewProducts = newProducts.Select(x => new ExtendedProduct(x, spot));
                     return (pages: newPages, products: newnewProducts);
@@ -313,7 +313,7 @@ public record GazetkiService
     {
         try
         {
-            var htmlTasks = ShopsQualifiers.Select(async x => await HtmlSourceManager.DownloadHtmlWithPuppeteerSharp(ShopsUrl + x));
+            var htmlTasks = ShopsQualifiers.Select(async x => await HtmlSourceManager.DownloadHtmlSourceCode(ShopsUrl + x));
             var htmlContents = await Task.WhenAll(htmlTasks);
 
             var spotsList = htmlContents.Select(Parser.GetSpots).SelectMany(s => s).ToList();
@@ -341,7 +341,7 @@ public record GazetkiService
                 try
                 {
                     var link = BaseUrl + x.url!;
-                    var html = await HtmlSourceManager.DownloadHtmlWithPuppeteerSharp(link);
+                    var html = await HtmlSourceManager.DownloadHtmlSourceCode(link);
                     var total = Parser.GetProductCount(html);
                     var newUrl = link.Substring(0, link.Length - 7).Replace("sklepy", "stores");
                     var newProducts = await Parser.GetProducts(newUrl, total, csfr);

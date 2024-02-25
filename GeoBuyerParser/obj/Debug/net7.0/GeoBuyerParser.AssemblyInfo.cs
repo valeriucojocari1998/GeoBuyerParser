@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GeoBuyerParser")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e84709605521ae192906fe7f43a0beb3244b5368")]
 [assembly: System.Reflection.AssemblyProductAttribute("GeoBuyerParser")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GeoBuyerParser")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

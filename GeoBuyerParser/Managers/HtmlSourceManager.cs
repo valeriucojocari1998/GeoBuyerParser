@@ -1,52 +1,33 @@
-﻿using PuppeteerSharp;
+﻿using System.Net.Http;
+using System.Net;
 
 namespace GeoBuyerParser.Managers
 {
     public static class HtmlSourceManager
     {
-        public static async Task<string> DownloadHtmlSourceCode(string url)
-        {
-            using HttpClient client = new();
-            HttpResponseMessage response = await client.GetAsync(url);
-
-            if (response.IsSuccessStatusCode)
-            {
-                string htmlSourceCode = await response.Content.ReadAsStringAsync();
-                return htmlSourceCode;
-            }
-            else
-            {
-                return string.Empty;
-            }
-        }
-
-        public static async Task<string> DownloadHtmlWithPuppeteerSharp(string url)
+        public static async Task<string> DownloadHtmlSourceCode(string url, string? proxyAddress = "brd.superproxy.io:9222", string? proxyUsername = "brd-customer-hl_8b8a4690-zone-skvidy", string? proxyPassword = "48i5b920eagw")
         {
             try
             {
-                // Ensure PuppeteerSharp is initialized and browser revision is downloaded
-                await new BrowserFetcher().DownloadAsync();
-
-                Console.WriteLine($"Start {url}");
-
-                using (var browser = await Puppeteer.LaunchAsync(new LaunchOptions
+                // Create a WebProxy with the specified address
+                var webProxy = new WebProxy(proxyAddress)
                 {
-                    Headless = true
-                }))
-                using (var page = await browser.NewPageAsync())
+                    // If your proxy requires authentication, set the credentials
+                    Credentials = new NetworkCredential(proxyUsername, proxyPassword)
+                };
+
+                // Create a WebClient with the configured proxy
+                using (var webClient = new WebClient())
                 {
-                    await page.GoToAsync(url);
-                    await page.WaitForTimeoutAsync(3000); // Adjust the timeout as needed
-
-                    Console.WriteLine($"End {url}");
-
-                    var html = await page.GetContentAsync();
-                    return html ?? "";
+                    // Download the HTML content
+                    string htmlSourceCode = await webClient.DownloadStringTaskAsync(url);
+                    Thread.Sleep(100);
+                    return htmlSourceCode;
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error in DownloadHtmlWithPuppeteerSharp: {ex.Message}");
+                Console.WriteLine($"Error in DownloadHtmlSourceCodeWithProxy: {ex.Message}");
                 return string.Empty;
             }
         }
